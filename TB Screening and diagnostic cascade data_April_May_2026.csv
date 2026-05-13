@@ -1,0 +1,523 @@
+State,L.G.A,Facility Name,Facility Type,Patient ID,Sex,Current Weight (kg),Age,Duration on ART (months),Clinical Staging at Last Visit,Date of Last CD4 Count,Last CD4 Count,Current ART Status,Date of TB Screening (yyyy-mm-dd),TB Screening Type,CAD Score,TB status,Date of TB Sample Collection (yyyy-mm-dd),TB Diagnostic Test Type,Date of TB Diagnostic Result Received (yyyy-mm-dd),TB Diagnostic Result,Binary TB Diagnostic Result
+Kano,Nasarawa,Ahmadiyya Muslim Hospital,Secondary,KAN-AHMMH-0001,Male,85,32,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,Ahmadiyya Muslim Hospital,Secondary,KAN-AHMMH-0002,Female,53,39,0.8,STAGE I,15/04/2026,>=200,Active,09/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,Ahmadiyya Muslim Hospital,Secondary,KAN-AHMMH-0003,Male,68,43,0.1,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,Ahmadiyya Muslim Hospital,Secondary,KAN-AHMMH-0004,Female,57,47,237.2,STAGE I,25/04/2026,>=200,Active,25/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0005,Female,30,34,1,STAGE I,10/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0006,Male,81,59,85.8,STAGE I,06/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0007,Male,63,43,1.2,STAGE I,01/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0008,Female,59,39,0.9,STAGE I,13/04/2026,<200,Died,13/04/2026,Symptom screen (alone),,Presumptive TB,13/04/2026,Gene Xpert,13/04/2026,MTB not detected,Negative
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0009,Male,60,37,0.6,STAGE I,20/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0010,Female,70,27,0.7,STAGE I,18/04/2026,>=200,Active,18/04/2026,Symptom screen (alone),,Presumptive TB,18/04/2026,Gene Xpert,18/04/2026,MTB not detected,Negative
+Kano,Tarauni,Al Noury Specialist Hospital,Secondary,KAN-ALNSH-0011,Female,68,32,60.3,STAGE I,08/05/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0012,Male,65,23,0.6,STAGE I,21/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,Presumptive TB,20/04/2026,Gene Xpert,20/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0013,Female,86,34,34.9,STAGE III,05/05/2026,<200,Active Restart,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,27/04/2026,TB-LAM,05/05/2026,Negative,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0014,Female,47,42,200,STAGE I,04/05/2026,>=200,Active Restart,04/05/2026,Symptom screen (alone),,Presumptive TB,30/04/2026,Gene Xpert,04/05/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0015,Male,45,49,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,01/04/2026,Gene Xpert,07/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0016,Female,84,39,141.1,STAGE I,28/04/2026,>=200,Active Restart,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0017,Male,78,47,195.4,STAGE I,04/04/2026,>=200,Active,01/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0018,Male,60,43,89.4,STAGE I,29/04/2026,<200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0019,Female,53,41,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,Presumptive TB,20/04/2026,Gene Xpert,23/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0020,Female,60,33,115.3,STAGE I,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0021,Male,58,42,133.7,STAGE I,05/05/2026,>=200,Active Restart,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0022,Female,26,15,37.4,STAGE I,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0023,Female,56,22,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,Presumptive TB,24/04/2026,Gene Xpert,28/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0024,Male,100,73,213.6,STAGE I,05/04/2026,>=200,Active Restart,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0025,Female,47,37,0.4,STAGE III,28/04/2026,<200,Active,28/04/2026,Symptom screen (alone),,Presumptive TB,23/04/2026,Gene Xpert,24/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0026,Female,41,39,0.6,STAGE IV,20/04/2026,<200,Active,20/04/2026,Symptom screen (alone),,Presumptive TB,14/04/2026,Gene Xpert,20/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0027,Male,44,21,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,01/04/2026,Gene Xpert,08/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0028,Female,49,25,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,06/04/2026,Gene Xpert,06/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0029,Female,54,43,178.6,STAGE I,23/04/2026,>=200,Active Restart,23/04/2026,Symptom screen (alone),,Presumptive TB,21/04/2026,Gene Xpert,23/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0030,Female,54,43,84.3,STAGE I,29/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0031,Female,65,41,0.1,STAGE I,05/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,Presumptive TB,27/04/2026,Gene Xpert,05/05/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0032,Female,50,38,195.6,STAGE I,21/04/2026,>=200,Active Restart,15/04/2026,Chest X-Ray with CAD and/or Symptom screening,1,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0033,Female,38,22,131.4,STAGE I,28/04/2026,>=200,IIT,,,,,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0034,Female,55,46,205.4,STAGE I,13/04/2026,>=200,Active Restart,13/04/2026,Symptom screen (alone),,Presumptive TB,01/04/2026,Gene Xpert,12/04/2026,MTB not detected,Negative
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0035,Male,52,51,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0036,Female,77,44,111,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0037,Female,52,36,26.7,STAGE I,29/04/2026,>=200,Active Restart,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0038,Female,75,52,203.2,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0039,Female,43,17,208.7,STAGE I,10/04/2026,>=200,Active,10/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0040,Female,72,55,242.7,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Aminu Kano Teaching Hospital,Tertiary,KAN-AMIKTH-0041,Female,79,55,305.2,STAGE I,04/04/2026,>=200,Active,01/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bebeji,Bebeji General Hospital,Secondary,KAN-BEBGH-0042,Male,52,42,1.1,STAGE I,06/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bebeji,Bebeji General Hospital,Secondary,KAN-BEBGH-0043,Male,50,49,0.1,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bebeji,Bebeji General Hospital,Secondary,KAN-BEBGH-0044,Male,65,37,1.2,STAGE I,01/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bebeji,Bebeji General Hospital,Secondary,KAN-BEBGH-0045,Female,70,44,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bichi,Bichi General Hospital,Secondary,KAN-BICGH-0046,Female,50,22,19,STAGE I,01/04/2026,<200,Active Restart,01/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bichi,Bichi General Hospital,Secondary,KAN-BICGH-0047,Female,45,21,25.8,STAGE I,29/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bichi,Bichi General Hospital,Secondary,KAN-BICGH-0048,Male,49,49,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bichi,Bichi General Hospital,Secondary,KAN-BICGH-0049,Male,59,30,61,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dambatta,Danbatta General Hospital,Secondary,KAN-DANGH-0050,Female,49,24,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dambatta,Danbatta General Hospital,Secondary,KAN-DANGH-0051,Female,32,39,1.2,STAGE I,01/04/2026,<200,Active,01/04/2026,Symptom screen (alone),,Presumptive TB,01/04/2026,TB-LAM,01/04/2026,Negative,Negative
+Kano,Dambatta,Danbatta General Hospital,Secondary,KAN-DANGH-0052,Female,59,29,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dambatta,Danbatta General Hospital,Secondary,KAN-DANGH-0053,Female,48,19,1,STAGE I,09/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dawakin Kudu,Dawakin Kudu General Hospital,Secondary,KAN-DAWKGH-0054,Male,80,34,1.1,STAGE I,06/04/2026,>=200,Active,06/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dawakin Kudu,Dawakin Kudu General Hospital,Secondary,KAN-DAWKGH-0055,Male,56,34,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Dawakin Kudu,Dawakin Kudu General Hospital,Secondary,KAN-DAWKGH-0056,Male,58,26,1.2,STAGE I,02/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dawakin Kudu,Dawakin Kudu General Hospital,Secondary,KAN-DAWKGH-0057,Female,49,23,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dawakin Kudu,Dawakin Kudu General Hospital,Secondary,KAN-DAWKGH-0058,Male,70,33,0.3,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dawakin Kudu,Dawakin Kudu General Hospital,Secondary,KAN-DAWKGH-0059,Male,56,36,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Dawakin Tofa,Dawakin Tofa General Hospital,Secondary,KAN-DAWTGH-0060,Male,51,51,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Doguwa,Doguwa General Hospital,Secondary,KAN-DOGGH-0061,Male,51,39,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Doguwa,Doguwa General Hospital,Secondary,KAN-DOGGH-0062,Male,74,74,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Doguwa,Doguwa General Hospital,Secondary,KAN-DOGGH-0063,Female,35,25,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Doguwa,Doguwa General Hospital,Secondary,KAN-DOGGH-0064,Female,56,19,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Doguwa,Doguwa General Hospital,Secondary,KAN-DOGGH-0065,Male,56,29,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Doguwa,Doguwa General Hospital,Secondary,KAN-DOGGH-0066,Female,72,41,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,TB-LAM,08/04/2026,Positive,Positive
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0067,Female,39,25,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0068,Male,54,39,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0069,Male,41,24,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,Presumptive TB,09/04/2026,TrueNAT,09/04/2026,Not Detected,Negative
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0070,Male,57,30,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0071,Male,43,45,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0072,Female,52,30,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0073,Male,52,34,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gaya,Gaya General Hospital,Secondary,KAN-GAYGH-0074,Female,46,37,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0075,Male,50,49,108.5,STAGE I,23/04/2026,>=200,Active,,,,,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0076,Male,66,19,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0077,Male,68,48,206.3,STAGE I,06/05/2026,>=200,Active Restart,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0078,Female,42,52,1,STAGE I,09/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0079,Male,18,9,90.1,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0080,Female,38,19,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0081,Female,50,40,178.6,STAGE I,23/04/2026,>=200,Active,,,,,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0082,Male,175,34,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0083,Male,60,71,23.1,STAGE I,23/04/2026,>=200,Active,,,,,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0084,Female,49,49,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0085,Male,42,15,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gezawa,Gezewa General Hospital,Secondary,KAN-GEZGH-0086,Female,53,32,0.3,STAGE I,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0087,Male,46,24,1,STAGE I,10/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0088,Female,42,39,0.1,STAGE I,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,06/05/2026,TB-LAM,06/05/2026,Negative,Negative
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0089,Female,42,44,0.4,STAGE II,28/04/2026,<200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,28/04/2026,TB-LAM,28/04/2026,Negative,Negative
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0090,Male,62,40,36.2,STAGE I,14/04/2026,<200,Active Restart,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,14/04/2026,TB-LAM,14/04/2026,Negative,Negative
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0091,Male,44,29,1.2,STAGE I,02/04/2026,<200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,02/04/2026,TB-LAM,02/04/2026,Negative,Negative
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0092,Female,44,24,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0093,Female,42,49,0.3,STAGE I,30/04/2026,<200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,30/04/2026,TB-LAM,30/04/2026,Negative,Negative
+Kano,Gwarzo,Gwarzo General Hospital,Secondary,KAN-GWAGH-0094,Female,48,29,1.1,STAGE I,07/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Hasiya Bayero Paediatric Hospital,Secondary,KAN-HASBPH-0095,Male,60,22,1.1,STAGE I,07/04/2026,<200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Kano,Kano Municipal,Hasiya Bayero Paediatric Hospital,Secondary,KAN-HASBPH-0096,Female,50,39,0.8,STAGE I,15/04/2026,<200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,15/04/2026,TB-LAM,15/04/2026,Negative,Negative
+Kano,Kano Municipal,Hasiya Bayero Paediatric Hospital,Secondary,KAN-HASBPH-0097,Female,45,50,138.4,STAGE I,16/04/2026,<200,Died,16/04/2026,Symptom screen (alone),,Presumptive TB,16/04/2026,TB-LAM,16/04/2026,Positive,Positive
+Kano,Kano Municipal,Hasiya Bayero Paediatric Hospital,Secondary,KAN-HASBPH-0098,Female,58,17,1.1,STAGE I,07/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Kano,Kano Municipal,Hasiya Bayero Paediatric Hospital,Secondary,KAN-HASBPH-0099,Male,50,30,1.1,STAGE IV,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Kano,Kano Municipal,Hasiya Bayero Paediatric Hospital,Secondary,KAN-HASBPH-0100,Female,46,38,160.9,STAGE I,21/04/2026,>=200,Active,,,,,21/04/2026,TB-LAM,21/04/2026,Positive,Positive
+Kano,Fagge,International Clinic,Secondary,KAN-INTC-0101,Male,67,41,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,International Clinic,Secondary,KAN-INTC-0102,Female,70,44,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,International Clinic,Secondary,KAN-INTC-0103,Female,49,17,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0104,Male,56,44,108,STAGE I,24/04/2026,>=200,Active Restart,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0105,Female,56,24,0.1,STAGE I,05/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0106,Female,82,44,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0107,Male,46,26,0.9,STAGE II,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,Presumptive TB,10/04/2026,Gene Xpert,21/04/2026,MTB detected RIF resistance not detected,Positive
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0108,Female,45,34,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,Gene Xpert,07/04/2026,MTB not detected,Negative
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0109,Female,84,31,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0110,Male,64,42,155.1,STAGE I,22/04/2026,>=200,Active Restart,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0111,Female,50,37,0.9,STAGE I,13/04/2026,>=200,Died,13/04/2026,Chest X-Ray with CAD and/or Symptom screening,20,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0112,Male,64,39,0.3,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0113,Male,50,34,0.8,STAGE II,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0114,Male,46,23,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0115,Female,52,24,0.1,STAGE II,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0116,Male,39,21,0.8,STAGE III,14/04/2026,<200,Active,14/04/2026,,,Currently on TB treatment,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0117,Male,53,49,0.3,STAGE II,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0118,Female,50,34,1.2,STAGE III,02/04/2026,<200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0119,Male,65,47,0.4,STAGE IV,28/04/2026,<200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,28/04/2026,TB-LAM,28/04/2026,Negative,Negative
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0120,Female,50,27,0.8,STAGE II,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0121,Female,97,32,0.8,STAGE II,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0122,Female,24,41,0.1,STAGE III,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0123,Male,55,34,0.5,STAGE I,08/04/2026,<200,Active,23/04/2026,,,Currently on TB treatment,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0124,Female,55,23,0.8,STAGE II,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0125,Female,40,34,0.8,STAGE II,14/04/2026,<200,Active,14/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0126,Male,70,35,7.3,STAGE I,04/05/2026,<200,Active Restart,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0127,Male,66,34,0.2,STAGE II,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0128,Male,50,53,37.4,STAGE I,24/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0129,Male,53,34,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0130,Female,40,19,1,STAGE I,09/04/2026,<200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0131,Female,70,28,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0132,Female,50,22,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0133,Female,42,21,0.1,STAGE II,05/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0134,Female,76,37,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0135,Male,67,24,0.3,STAGE III,30/04/2026,<200,Active,30/04/2026,,,Currently on TB treatment,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0136,Female,72,45,0.4,STAGE III,27/04/2026,<200,Active,27/04/2026,Symptom screen (alone),,Presumptive TB,27/04/2026,TB-LAM,27/04/2026,Negative,Negative
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0137,Male,65,36,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0138,Male,75,50,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0139,Female,67,29,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0140,Female,46,26,0,STAGE II,08/05/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,08/05/2026,TB-LAM,08/05/2026,Negative,Negative
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0141,Female,98,46,0.3,STAGE II,29/04/2026,<200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0142,Female,48,44,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,Gene Xpert,09/04/2026,MTB not detected,Negative
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0143,Female,72,35,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0144,Female,69,30,0.8,STAGE II,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0145,Female,49,29,0.3,STAGE I,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0146,Female,68,26,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0147,Female,50,25,0.2,STAGE II,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0148,Female,35,19,0.3,STAGE II,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,Gene Xpert,30/04/2026,MTB not detected,Negative
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0149,Male,47,21,0.8,STAGE II,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0150,Male,52,44,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0151,Female,52,38,133.2,STAGE I,02/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Kano Infectious Diseases Hospital,Secondary,KAN-KANIDH-0152,Female,46,29,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Karaye,Karaye Comprehensive Health Centre,Primary,KAN-KARCHC-0153,Male,60,25,0.1,STAGE I,07/05/2026,<200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Karaye,Karaye Comprehensive Health Centre,Primary,KAN-KARCHC-0154,Female,60,40,0.6,STAGE I,22/04/2026,<200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kiru,Kiru Comprehensive Health Centre,Primary,KAN-KIRCHC-0155,Female,67,34,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0156,Female,65,27,134.1,STAGE I,15/04/2026,<200,Active,15/04/2026,Symptom screen (alone),,Presumptive TB,15/04/2026,TB-LAM,15/04/2026,Positive,Positive
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0157,Female,39,40,0.6,STAGE I,22/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0158,Female,48,36,82.9,STAGE I,15/04/2026,>=200,Active Restart,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0159,Female,86,24,0.6,STAGE I,21/04/2026,<200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0160,Female,56,38,128.9,STAGE I,29/04/2026,>=200,Active,,,,,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0161,Female,68,31,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0162,Male,55,35,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0163,Female,77,29,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0164,Male,56,46,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0165,Male,60,29,0.6,STAGE I,20/04/2026,<200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0166,Male,,40,175.3,STAGE I,04/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,04/05/2026,TB-LAM,04/05/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0167,Male,59,31,1.1,STAGE I,07/04/2026,<200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0168,Female,85,39,93.1,STAGE I,14/04/2026,>=200,Active Restart,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0169,Male,49,36,0.2,STAGE I,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,04/05/2026,TB-LAM,04/05/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0170,Female,70,37,7.3,STAGE I,14/04/2026,>=200,Active Restart,08/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0171,Female,55,21,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0172,Female,40,19,1.1,STAGE I,07/04/2026,<200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0173,Male,40,22,77.6,STAGE I,28/04/2026,<200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0174,Male,60,39,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0175,Female,51,24,0.9,STAGE I,13/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0176,Male,90,46,107.1,STAGE I,07/04/2026,<200,Active Restart,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0177,Female,,43,53.9,STAGE I,07/05/2026,<200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0178,Male,69,39,1.2,STAGE I,01/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0179,Male,47,66,0.1,STAGE I,05/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,Presumptive TB,05/05/2026,TB-LAM,05/05/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0180,Female,3.4,0,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0181,Female,63,28,1.2,STAGE I,01/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0182,Male,81,40,11.9,STAGE I,14/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0183,Male,21,12,0.6,STAGE I,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,Presumptive TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0184,Female,56,24,0.6,STAGE I,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0185,Female,72,27,4.5,STAGE I,22/04/2026,>=200,Active Restart,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0186,Male,46,29,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,kn Sir Muhammad Sanusi Specialist Hospital,Secondary,KAN-KNSMSSH-0187,Female,53,39,1,STAGE I,08/04/2026,<200,Active,08/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kura,Kura General Hospital,Secondary,KAN-KURGH-0188,Female,55,29,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kura,Kura General Hospital,Secondary,KAN-KURGH-0189,Female,47,26,0.8,STAGE I,15/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kura,Kura General Hospital,Secondary,KAN-KURGH-0190,Female,65,33,1.2,STAGE I,01/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kura,Kura General Hospital,Secondary,KAN-KURGH-0191,Female,60,39,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kura,Kura General Hospital,Secondary,KAN-KURGH-0192,Male,55,35,1,STAGE I,10/04/2026,>=200,Active,10/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Mariya Sanusi Primary Health Care,Primary,KAN-MARSPHC-0193,Female,51,28,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Mariya Sanusi Primary Health Care,Primary,KAN-MARSPHC-0194,Female,57,40,0.4,STAGE I,28/04/2026,<200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,28/04/2026,TB-LAM,28/04/2026,Negative,Negative
+Kano,Dala,MCH Dala,Primary,KAN-MCHD-0195,Female,50,29,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Chest X-Ray with CAD and/or Symptom screening,10,No signs or symptoms of TB,,,,,
+Kano,Dala,MCH Dala,Primary,KAN-MCHD-0196,Female,55,32,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Chest X-Ray with CAD and/or Symptom screening,7,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0197,Female,65,22,0.1,STAGE I,13/04/2026,<200,Active,06/05/2026,,,Currently on TB treatment,13/04/2026,TB-LAM,13/04/2026,Positive,Positive
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0198,Female,80,29,1.1,STAGE I,07/04/2026,>=200,Active,04/05/2026,Chest X-Ray with CAD and/or Symptom screening,11,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0199,Male,62,48,0.6,STAGE I,22/04/2026,<200,Active,22/04/2026,Chest X-Ray with CAD and/or Symptom screening,29,No signs or symptoms of TB,22/04/2026,TB-LAM,22/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0200,Female,48,33,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Chest X-Ray with CAD and/or Symptom screening,16,No signs or symptoms of TB,20/04/2026,TB-LAM,20/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0201,Female,55,56,224.1,STAGE I,27/04/2026,<200,Active Restart,27/04/2026,Chest X-Ray with CAD and/or Symptom screening,12,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0202,Female,86,33,1,STAGE I,07/04/2026,<200,Active,08/04/2026,Chest X-Ray with CAD and/or Symptom screening,12,No signs or symptoms of TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0203,Female,39,39,0.3,STAGE I,14/04/2026,<200,Active,29/04/2026,Chest X-Ray with CAD and/or Symptom screening,13,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0204,Female,45,36,0.7,STAGE I,17/04/2026,>=200,Active,17/04/2026,Chest X-Ray with CAD and/or Symptom screening,16,No signs or symptoms of TB,17/04/2026,TB-LAM,17/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0205,Female,55,21,1.2,STAGE I,01/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0206,Male,85,34,0.8,STAGE I,14/04/2026,>=200,Active,15/04/2026,Chest X-Ray with CAD and/or Symptom screening,12,No signs or symptoms of TB,15/04/2026,TB-LAM,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0207,Female,40,39,0.6,STAGE I,08/04/2026,<200,Active,20/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,Presumptive TB,07/04/2026,TB-LAM,07/04/2026,Positive,Positive
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0208,Male,79,23,0.3,STAGE I,29/04/2026,<200,Active,29/04/2026,Chest X-Ray with CAD and/or Symptom screening,12,No signs or symptoms of TB,29/04/2026,TB-LAM,29/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0209,Male,66,33,1.2,STAGE I,01/04/2026,<200,Active,01/04/2026,Chest X-Ray with CAD and/or Symptom screening,12,No signs or symptoms of TB,01/04/2026,TB-LAM,01/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0210,Female,83,41,0.6,STAGE I,22/04/2026,<200,Active,22/04/2026,Chest X-Ray with CAD and/or Symptom screening,12,No signs or symptoms of TB,22/04/2026,TB-LAM,22/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0211,Female,55,29,0.4,STAGE I,28/04/2026,<200,Active,28/04/2026,Chest X-Ray with CAD and/or Symptom screening,9,No signs or symptoms of TB,28/04/2026,TB-LAM,28/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0212,Female,30,59,0.6,STAGE I,20/04/2026,<200,Active,21/04/2026,Chest X-Ray with CAD and/or Symptom screening,20,No signs or symptoms of TB,20/04/2026,TB-LAM,20/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0213,Male,65,21,0.6,STAGE I,20/04/2026,>=200,Active,27/04/2026,Chest X-Ray with CAD and/or Symptom screening,24,No signs or symptoms of TB,20/04/2026,TB-LAM,20/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0214,Male,46,23,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Chest X-Ray with CAD and/or Symptom screening,27,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0215,Female,46,59,1.2,STAGE I,01/04/2026,>=200,Active,29/04/2026,Chest X-Ray with CAD and/or Symptom screening,16,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0216,Female,45,19,0.8,STAGE I,16/04/2026,<200,Active,16/04/2026,Chest X-Ray with CAD and/or Symptom screening,42,Presumptive TB,16/04/2026,TB-LAM,16/04/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0217,Female,74,48,21.7,STAGE I,27/04/2026,<200,IIT,,,,,28/04/2026,Gene Xpert,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0218,Female,38,18,105.9,STAGE I,20/04/2026,<200,Active,,,,,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0219,Male,58,66,184,STAGE I,06/05/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0220,Male,84,45,130,STAGE I,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,06/05/2026,TB-LAM,06/05/2026,Negative,Negative
+Kano,Kano Municipal,Murtala Mohammed Specialist Hospital,Secondary,KAN-MURMSH-0221,Female,47,23,131.7,STAGE I,07/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,07/05/2026,TB-LAM,07/05/2026,Negative,Negative
+Kano,Nasarawa,Mohammad Abdullahi Wase Hospital,Secondary,KAN-MOHAWH-0222,Female,72,31,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Nasarawa,Mohammad Abdullahi Wase Hospital,Secondary,KAN-MOHAWH-0223,Female,60,24,1,STAGE I,09/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Nuhu Bamalli Maternity Hospital,Primary,KAN-NUHBMH-0224,Female,70,25,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Kano Municipal,Nuhu Bamalli Maternity Hospital,Primary,KAN-NUHBMH-0225,Female,89,38,21.5,STAGE I,09/04/2026,>=200,Active Restart,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rano,Rano General Hospital,Secondary,KAN-RANGH-0226,Female,55,26,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rano,Rano General Hospital,Secondary,KAN-RANGH-0227,Female,40,34,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rano,Rano General Hospital,Secondary,KAN-RANGH-0228,Female,56,49,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rogo,Rogo General Hospital,Secondary,KAN-ROGGH-0229,Male,50,49,1.2,STAGE I,02/04/2026,>=200,Active,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rogo,Rogo General Hospital,Secondary,KAN-ROGGH-0230,Female,51,39,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rogo,Rogo General Hospital,Secondary,KAN-ROGGH-0231,Male,50,19,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Rogo,Rogo General Hospital,Secondary,KAN-ROGGH-0232,Female,55,29,1.2,STAGE I,02/04/2026,>=200,Active,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0233,Female,68,33,1,STAGE I,09/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0234,Female,80,31,45.9,STAGE I,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0235,Male,100,40,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0236,Female,45,38,0,STAGE I,08/05/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0237,Female,20,13,0.8,STAGE III,14/04/2026,<200,Active,14/04/2026,Symptom screen (alone),,Presumptive TB,14/04/2026,TB-LAM,14/04/2026,Negative,Negative
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0238,Female,50,34,1.2,STAGE I,02/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0239,Female,51,38,0.6,STAGE III,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0240,Male,20,12,16.7,STAGE I,14/04/2026,<200,IIT,14/04/2026,Symptom screen (alone),,Presumptive TB,14/04/2026,TB-LAM,14/04/2026,Positive,Positive
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0241,Female,66,28,38.7,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Fagge,Sheikh Mohammed Jidda General Hospital,Secondary,KAN-SHEMJGH-0242,Female,67,29,67.3,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Sumaila,Sumaila General Hospital,Secondary,KAN-SUMGH-0243,Male,52,59,0.1,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Sumaila,Sumaila General Hospital,Secondary,KAN-SUMGH-0244,Female,44,26,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Sumaila,Sumaila General Hospital,Secondary,KAN-SUMGH-0245,Female,56,33,65,STAGE I,23/04/2026,>=200,Active Restart,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Sumaila,Sumaila General Hospital,Secondary,KAN-SUMGH-0246,Female,37,39,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Sumaila,Sumaila General Hospital,Secondary,KAN-SUMGH-0247,Female,39,24,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0248,Male,54,39,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0249,Female,50,44,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Chest X-Ray with CAD and/or Symptom screening,32,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0250,Female,59,27,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0251,Female,49,44,1.2,STAGE I,01/04/2026,>=200,Active,04/05/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0252,Female,40,39,0.9,STAGE I,13/04/2026,>=200,Active,21/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0253,Female,49,33,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Chest X-Ray with CAD and/or Symptom screening,30,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0254,Female,56,29,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0255,Female,59,23,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0256,Male,49,40,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Chest X-Ray with CAD and/or Symptom screening,30,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0257,Male,62,33,0,STAGE I,08/05/2026,>=200,Active,08/05/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Takai,Takai Comprehensive Health Centre,Primary,KAN-TAKCHC-0258,Female,51,28,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Chest X-Ray with CAD and/or Symptom screening,31,No signs or symptoms of TB,,,,,
+Kano,Bebeji,Tiga General Hospital,Secondary,KAN-TIGGH-0259,Female,56,35,0.9,STAGE I,13/04/2026,<200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Bebeji,Tiga General Hospital,Secondary,KAN-TIGGH-0260,Male,70,30,1.2,STAGE I,02/04/2026,<200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tofa,Tofa Primary Health Centre,Primary,KAN-TOFPHC-0261,Female,50,29,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tofa,Tofa Primary Health Centre,Primary,KAN-TOFPHC-0262,Male,47,39,1.1,STAGE I,06/04/2026,>=200,Active,06/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tsanyawa,Tsanyawa Comprehensive Health Centre,Primary,KAN-TSACHC-0263,Male,59,31,1.1,STAGE I,06/04/2026,<200,Active,06/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0264,Female,50,50,6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0265,Female,55,48,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0266,Female,46,36,25.5,STAGE I,07/04/2026,>=200,Active Restart,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0267,Female,69,24,0.9,STAGE I,13/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0268,Female,45,38,96,STAGE I,13/04/2026,>=200,Active Restart,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0269,Female,54,39,0.6,STAGE I,20/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tudun Wada,Tudun Wada General Hospital,Secondary,KAN-TUDWGH-0270,Male,57,44,0.3,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Unguwa Uku Maternal and Child Health Centre,Primary,KAN-UNGUMCHC-0271,Female,47,35,0.4,STAGE I,27/04/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Unguwa Uku Maternal and Child Health Centre,Primary,KAN-UNGUMCHC-0272,Female,64,28,0.5,STAGE I,24/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Tarauni,Unguwa Uku Maternal and Child Health Centre,Primary,KAN-UNGUMCHC-0273,Female,65,34,0.7,STAGE I,17/04/2026,<200,Active,17/04/2026,Symptom screen (alone),,No signs or symptoms of TB,17/04/2026,Chest X-ray,17/04/2026,Not suggestive for TB,Negative
+Kano,Tarauni,Unguwa Uku Maternal and Child Health Centre,Primary,KAN-UNGUMCHC-0274,Male,59,31,0.5,STAGE I,24/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0275,Female,30,37,0.1,STAGE I,05/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,Presumptive TB,05/05/2026,Gene Xpert,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0276,Male,50,26,1.1,STAGE I,07/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,07/04/2026,Gene Xpert,07/04/2026,MTb Not Detected,Negative
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0277,Male,53,29,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0278,Female,47,30,0.1,STAGE II,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,Presumptive TB,06/05/2026,Gene Xpert,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0279,Female,45,19,0.1,STAGE I,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,Presumptive TB,06/05/2026,TB-LAM,06/05/2026,Negative,Negative
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0280,Female,64,24,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,Presumptive TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0281,Female,44,21,47.6,STAGE I,06/05/2026,<200,Active Restart,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0282,Female,60,34,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0283,Male,49,37,0.2,STAGE I,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,04/05/2026,TB-LAM,04/05/2026,Negative,Negative
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0284,Male,59,43,0.4,STAGE I,27/04/2026,<200,Active,27/04/2026,Symptom screen (alone),,Presumptive TB,27/04/2026,TB-LAM,27/04/2026,Positive,Positive
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0285,Female,71,23,0.1,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0286,Female,60,26,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0287,Female,70,43,166.9,STAGE I,02/04/2026,>=200,Active Restart,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0288,Female,52,24,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0289,Female,50,39,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Ungogo,Waziri Shehu Gidado Hospital,Secondary,KAN-WAZSGH-0290,Male,46,24,0.7,STAGE I,17/04/2026,<200,Active,17/04/2026,Symptom screen (alone),,Presumptive TB,17/04/2026,TB-LAM,17/04/2026,Negative,Negative
+Kano,Wudil,Wudil General Hospital,Secondary,KAN-WUDGH-0291,Female,64,28,0.6,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,Presumptive TB,16/04/2026,Gene Xpert,20/04/2026,MTB not detected,Negative
+Kano,Wudil,Wudil General Hospital,Secondary,KAN-WUDGH-0292,Male,58,44,0.5,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,Presumptive TB,20/04/2026,Gene Xpert,20/04/2026,MTB not detected,Negative
+Kano,Wudil,Wudil General Hospital,Secondary,KAN-WUDGH-0293,Female,46.5,49,121.3,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Kano,Wudil,Wudil General Hospital,Secondary,KAN-WUDGH-0294,Female,49,26,0.4,STAGE I,27/04/2026,<200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,23/04/2026,Gene Xpert,27/04/2026,MTB not detected,Negative
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0295,Female,48,25,4.9,STAGE I,23/04/2026,>=200,Active Restart,01/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0296,Female,42.3,39,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,Presumptive TB,22/04/2026,TB-LAM,22/04/2026,Negative,Negative
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0297,Female,47.8,23,39.9,STAGE I,23/04/2026,>=200,Active Restart,10/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0298,Female,51,33,41.5,STAGE I,23/04/2026,>=200,Active Restart,10/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0299,Female,49.9,36,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0300,Male,54.5,37,1,STAGE I,08/04/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0301,Female,54,29,0.8,STAGE II,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,Presumptive TB,15/04/2026,TB-LAM,15/04/2026,Negative,Negative
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0302,Male,48,52,32,STAGE I,23/04/2026,>=200,Active Restart,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Babura,Babura General Hospital,Secondary,JIG-BABGH-0303,Female,50.3,28,45,STAGE I,23/04/2026,>=200,Active Restart,10/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin Kudu General Hospital,Secondary,JIG-BIRKGH-0304,Male,66,25,0.8,STAGE I,14/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin Kudu General Hospital,Secondary,JIG-BIRKGH-0305,Female,39,19,1,STAGE I,10/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin Kudu General Hospital,Secondary,JIG-BIRKGH-0306,Female,56,39,0,STAGE I,08/05/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin-Kudu Federal Medical Centre,Tertiary,JIG-BIRKFMC-0307,Female,45,39,1.2,STAGE I,02/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin-Kudu Federal Medical Centre,Tertiary,JIG-BIRKFMC-0308,Female,38,24,0.6,STAGE I,20/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin-Kudu Federal Medical Centre,Tertiary,JIG-BIRKFMC-0309,Female,40,25,1,STAGE I,09/04/2026,<200,Active,09/04/2026,Symptom screen (alone),,Presumptive TB,09/04/2026,TB-LAM,09/04/2026,Negative,Negative
+Jigawa,Birnin Kudu,Birnin-Kudu Federal Medical Centre,Tertiary,JIG-BIRKFMC-0310,Female,73,39,0.9,STAGE I,13/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin-Kudu Federal Medical Centre,Tertiary,JIG-BIRKFMC-0311,Male,50,34,1,STAGE I,08/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birnin Kudu,Birnin-Kudu Federal Medical Centre,Tertiary,JIG-BIRKFMC-0312,Male,57,44,55.8,STAGE I,21/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Birniwa,Birniwa General Hospital,Secondary,JIG-BIRGH-0313,Female,52,29,0.1,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0314,Male,49,44,0.6,STAGE I,21/04/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,21/04/2026,TB-LAM,21/04/2026,Negative,Negative
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0315,Male,54,38,6.5,STAGE II,27/04/2026,<200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,27/04/2026,TB-LAM,27/04/2026,Negative,Negative
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0316,Male,53,32,1,STAGE I,09/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0317,Female,102,46,137.4,STAGE I,05/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0318,Female,50,16,0.3,STAGE I,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0319,Female,80,25,26.7,STAGE I,07/04/2026,<200,Active Restart,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0320,Male,52,29,0.6,STAGE I,20/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0321,Female,51,27,1.2,STAGE I,02/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0322,Female,52,27,96,STAGE II,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Dutse General Hospital,Secondary,JIG-DUTGH-0323,Female,50,25,1.2,STAGE I,01/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Gawuna Primary Health Centre,Primary,JIG-GAWPHC-0324,Female,58,40,0.6,STAGE I,22/04/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Gawuna Primary Health Centre,Primary,JIG-GAWPHC-0325,Female,50,20,1.1,STAGE I,07/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0326,Female,65,47,36.9,STAGE I,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0327,Female,61,38,5.9,STAGE I,13/04/2026,<200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0328,Female,76,25,4.5,STAGE I,15/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0329,Male,59,39,0.5,STAGE IV,09/04/2026,<200,Active,09/04/2026,Symptom screen (alone),,Presumptive TB,09/04/2026,Gene Xpert,09/04/2026,MTB detected RIF resistance not detected,Positive
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0330,Female,60,41,82.9,STAGE I,17/04/2026,>=200,Active,17/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0331,Female,50,25,4.3,STAGE I,15/04/2026,<200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gumel,Gumel General Hospital,Secondary,JIG-GUMGH-0332,Female,48,39,0,STAGE I,08/05/2026,<200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0333,Female,50,24,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0334,Male,53,55,0.9,STAGE I,13/04/2026,<200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0335,Male,58,50,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0336,Female,55,39,146.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0337,Female,32,8,19.4,STAGE I,21/04/2026,>=200,Active Restart,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0338,Female,60,36,86.3,STAGE I,02/04/2026,>=200,Active Restart,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0339,Female,60,35,89.5,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Gwaram,Gwaram Cottage Hospital,Secondary,JIG-GWACH-0340,Female,50,36,5,STAGE I,02/04/2026,>=200,Active Restart,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0341,Female,49,24,1,STAGE II,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,16/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0342,Female,55,45,184.5,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0343,Female,46,33,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,16/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0344,Female,74,46,201.6,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0345,Female,85,40,187.1,STAGE II,30/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,Presumptive TB,30/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0346,Female,50,31,103.3,STAGE I,10/04/2026,>=200,Active,10/04/2026,Symptom screen (alone),,Presumptive TB,10/04/2026,Gene Xpert,30/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0347,Female,40,33,148.8,STAGE II,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,Presumptive TB,28/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0348,Male,57,44,58.7,STAGE II,22/04/2026,>=200,Active Restart,22/04/2026,Symptom screen (alone),,Presumptive TB,22/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0349,Male,64,25,107.7,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,Presumptive TB,16/04/2026,Gene Xpert,30/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0350,Male,50,56,172.8,STAGE II,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,Presumptive TB,22/04/2026,Gene Xpert,29/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0351,Male,49,55,181.8,STAGE I,29/04/2026,>=200,Active Restart,29/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0352,Female,56,38,184.8,STAGE II,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,Presumptive TB,15/04/2026,Gene Xpert,30/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0353,Female,53,38,175.3,STAGE I,24/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0354,Female,42,29,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,13/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0355,Male,60,20,171.7,STAGE II,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,Presumptive TB,28/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0356,Female,21,12,75.1,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0357,Female,42,51,119.6,STAGE II,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,Gene Xpert,16/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0358,Female,57,40,164.8,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,Gene Xpert,16/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0359,Female,57,38,151.2,STAGE II,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,Presumptive TB,05/05/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0360,Male,70,39,100.4,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,16/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0361,Male,60,47,139.7,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,Gene Xpert,,,
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0362,Female,57,34,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,13/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0363,Female,33,39,1.2,STAGE I,02/04/2026,>=200,Died,02/04/2026,Symptom screen (alone),,Presumptive TB,02/04/2026,Gene Xpert,07/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0364,Female,40,64,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,16/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Hadejia General Hospital,Secondary,JIG-HADGH-0365,Female,45,39,1.2,STAGE I,01/04/2026,<200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,01/04/2026,Gene Xpert,07/04/2026,MTb Not Detected,Negative
+Jigawa,Jahun,Jahun General Hospital,Secondary,JIG-JAHGH-0366,Male,60,29,1,STAGE I,09/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Jahun,Jahun General Hospital,Secondary,JIG-JAHGH-0367,Male,38,29,0.3,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Jahun,Jahun General Hospital,Secondary,JIG-JAHGH-0368,Female,45,45,0.6,STAGE I,20/04/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Jahun,Jahun General Hospital,Secondary,JIG-JAHGH-0369,Female,40,19,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Jahun,Jahun General Hospital,Secondary,JIG-JAHGH-0370,Female,54,29,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Kafin Hausa,Kafin Hausa General Hospital,Secondary,JIG-KAFHGH-0371,Female,46,40,0.1,STAGE I,05/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0372,Male,56,65,92.3,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0373,Male,54,54,109.1,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0374,Female,62,39,0.8,STAGE I,14/04/2026,<200,Active,14/04/2026,Symptom screen (alone),,Presumptive TB,14/04/2026,Gene Xpert,14/04/2026,MTB not detected,Negative
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0375,Female,51,39,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,Presumptive TB,13/04/2026,Gene Xpert,13/04/2026,MTB not detected,Negative
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0376,Female,40,18,0.2,STAGE I,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,04/05/2026,Gene Xpert,04/05/2026,MTB not detected,Negative
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0377,Female,21.5,17,0.3,STAGE II,30/04/2026,<200,Active,30/04/2026,Symptom screen (alone),,Presumptive TB,30/04/2026,TB-LAM,30/04/2026,Negative,Negative
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0378,Female,62,32,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,Presumptive TB,09/04/2026,Gene Xpert,09/04/2026,MTB not detected,Negative
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0379,Male,66,47,88.7,STAGE I,01/04/2026,>=200,Active Restart,01/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0380,Female,50,20,0.8,STAGE I,15/04/2026,<200,Active,15/04/2026,Symptom screen (alone),,Presumptive TB,15/04/2026,Gene Xpert,15/04/2026,MTB not detected,Negative
+Jigawa,Kazaure,Kazaure General Hospital,Secondary,JIG-KAZGH-0381,Male,57,44,112.1,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Kofar Arewa Primary Health Centre,Primary,JIG-KOFAPHC-0382,Female,44,25,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,Presumptive TB,16/04/2026,Gene Xpert,30/04/2026,MTb Not Detected,Negative
+Jigawa,Hadejia,Kofar Arewa Primary Health Centre,Primary,JIG-KOFAPHC-0383,Female,37,18,0.6,STAGE I,22/04/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Kofar Arewa Primary Health Centre,Primary,JIG-KOFAPHC-0384,Female,66,30,1.1,STAGE I,07/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Hadejia,Kofar Arewa Primary Health Centre,Primary,JIG-KOFAPHC-0385,Female,66,40,1,STAGE I,09/04/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Dutse,Rasheed Shekoni Specialist Hospital,Secondary,JIG-RASSSH-0386,Female,36,49,0.1,STAGE I,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0387,Female,68,36,5.2,STAGE I,23/04/2026,<200,Active Restart,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0388,Female,28,14,28.2,STAGE I,24/04/2026,<200,Active Restart,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0389,Female,74,30,1.9,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0390,Male,61,30,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0391,Female,51,40,21.9,STAGE I,02/04/2026,<200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0392,Male,30,14,29.5,STAGE I,23/04/2026,<200,Active Restart,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0393,Male,47,26,0.7,STAGE I,17/04/2026,<200,Active,17/04/2026,Symptom screen (alone),,Presumptive TB,17/04/2026,Gene Xpert,17/04/2026,MTB not detected,Negative
+Jigawa,Ringim,Ringim General Hospital,Secondary,JIG-RINGH-0394,Male,47,61,4.9,STAGE I,23/04/2026,<200,Active Restart,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0395,Female,67,60,232.6,STAGE I,24/04/2026,>=200,Active Restart,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0396,Female,57,19,0.8,STAGE I,14/04/2026,<200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0397,Female,55,44,163.8,STAGE I,07/04/2026,>=200,Active Restart,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0398,Male,30,17,1.2,STAGE I,02/04/2026,<200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0399,Female,56,41,0,STAGE I,29/04/2026,<200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,10/04/2026,TB-LAM,29/04/2026,Negative,Negative
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0400,Female,49,20,0.8,STAGE I,15/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0401,Male,50,27,0.8,STAGE I,16/04/2026,<200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0402,Female,63,26,1.2,STAGE I,02/04/2026,>=200,Transferred Out,02/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0403,Female,58,35,0.3,STAGE I,28/04/2026,<200,Active,29/04/2026,Symptom screen (alone),,Presumptive TB,29/04/2026,TB-LAM,29/04/2026,Positive,Positive
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0404,Female,48,30,27.8,STAGE I,05/05/2026,>=200,Active Restart,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0405,Female,63,33,0,STAGE I,27/04/2026,<200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,16/04/2026,TB-LAM,27/04/2026,Negative,Negative
+Bauchi,Bauchi,Abubakar Tafawa Balewa University Teaching Hospital,Tertiary,BAU-ABUTBUTH-0406,Male,68,54,1,STAGE I,08/04/2026,<200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Alkaleri,Alkaleri General Hospital,Secondary,BAU-ALKGH-0407,Female,55,22,0.5,STAGE I,24/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Alkaleri,Alkaleri General Hospital,Secondary,BAU-ALKGH-0408,Male,60,39,1,STAGE I,08/04/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Alkaleri,Alkaleri General Hospital,Secondary,BAU-ALKGH-0409,Female,47,27,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Alkaleri,Alkaleri General Hospital,Secondary,BAU-ALKGH-0410,Female,50,19,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Alkaleri,Alkaleri General Hospital,Secondary,BAU-ALKGH-0411,Male,69,49,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Alkaleri,Alkaleri General Hospital,Secondary,BAU-ALKGH-0412,Female,50,35,1,STAGE I,08/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare Federal Medical Centre,Tertiary,BAU-AZAFMC-0413,Female,63,29,0.6,STAGE I,22/04/2026,<200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,22/04/2026,TB-LAMP,22/04/2026,Negative,Negative
+Bauchi,Katagum,Azare Federal Medical Centre,Tertiary,BAU-AZAFMC-0414,Female,49,45,0.5,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,Presumptive TB,22/04/2026,TB-LAM,22/04/2026,Negative,Negative
+Bauchi,Katagum,Azare Federal Medical Centre,Tertiary,BAU-AZAFMC-0415,Male,65,40,0.8,STAGE I,14/04/2026,<200,Active,17/04/2026,Symptom screen (alone),,Presumptive TB,14/04/2026,TB-LAMP,14/04/2026,Positive,Positive
+Bauchi,Katagum,Azare Federal Medical Centre,Tertiary,BAU-AZAFMC-0416,Female,55,52,206.9,STAGE I,07/04/2026,<200,Active Restart,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare Federal Medical Centre,Tertiary,BAU-AZAFMC-0417,Female,41,25,0.8,STAGE I,16/04/2026,>=200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare Federal Medical Centre,Tertiary,BAU-AZAFMC-0418,Female,52,25,0.2,STAGE III,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,04/05/2026,TB-LAM,04/05/2026,Negative,Negative
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0419,Male,39,25,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,Presumptive TB,23/04/2026,Gene Xpert,,,
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0420,Female,46,45,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,Presumptive TB,21/04/2026,TB-LAMP,21/04/2026,Negative,Negative
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0421,Female,59,20,0,STAGE I,08/05/2026,>=200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0422,Female,49,35,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0423,Male,55,20,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0424,Female,58,24,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Katagum,Azare General Hospital,Secondary,BAU-AZAGH-0425,Female,80,21,0.9,STAGE I,13/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0426,Male,58,35,0.4,STAGE I,27/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,Presumptive TB,27/04/2026,Gene Xpert,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0427,Male,54,60,28.2,STAGE I,17/04/2026,>=200,Active,17/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0428,Male,49,34,0.1,STAGE I,06/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,Presumptive TB,06/05/2026,Gene Xpert,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0429,Female,65,41,1.2,STAGE I,01/04/2026,>=200,Active,01/04/2026,Symptom screen (alone),,Presumptive TB,01/04/2026,Gene Xpert,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0430,Female,45,24,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0431,Female,40,26,48.4,STAGE I,21/04/2026,>=200,Active Restart,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0432,Male,50,39,107.5,STAGE I,07/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0433,Male,78,64,202.5,STAGE I,06/05/2026,>=200,Active Restart,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0434,Female,48,39,163,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0435,Male,44,59,1,STAGE I,08/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0436,Female,58,19,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0437,Male,59,29,1,STAGE I,08/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0438,Male,58,24,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,Presumptive TB,05/05/2026,Gene Xpert,05/05/2026,MTB not detected,Negative
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0439,Female,57,41,166.4,STAGE I,05/05/2026,>=200,Active Restart,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0440,Female,39,25,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,Presumptive TB,07/04/2026,Gene Xpert,07/04/2026,MTB not detected,Negative
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0441,Male,64,33,40.6,STAGE I,27/04/2026,>=200,Active Restart,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0442,Male,41,39,0.6,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,Presumptive TB,20/04/2026,Gene Xpert,20/04/2026,MTB not detected,Negative
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0443,Female,69,29,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,Gene Xpert,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0444,Female,74,23,7.5,STAGE I,20/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Bayara Infectious Diseases Hospital,Secondary,BAU-BAYIDH-0445,Female,44,23,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,04/05/2026,Gene Xpert,04/05/2026,MTB not detected,Negative
+Bauchi,Dambam,Damban General Hospital,Secondary,BAU-DAMGH-0446,Male,63,39,0.8,STAGE I,17/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dambam,Damban General Hospital,Secondary,BAU-DAMGH-0447,Female,58,24,0.8,STAGE I,17/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dambam,Damban General Hospital,Secondary,BAU-DAMGH-0448,Female,65,34,0.1,STAGE III,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Bauchi,Darazo,Darazo General Hospital,Secondary,BAU-DARGH-0449,Female,57,30,0.6,STAGE I,22/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Darazo,Darazo General Hospital,Secondary,BAU-DARGH-0450,Female,43,35,0.9,STAGE I,13/04/2026,<200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,13/04/2026,TB-LAMP,13/04/2026,Negative,Negative
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0451,Male,10,9,22,STAGE I,08/04/2026,<200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0452,Female,85,42,0.6,STAGE I,22/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0453,Female,51,30,0.6,STAGE I,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0454,Female,78,28,0.6,STAGE I,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0455,Female,59,17,1.2,STAGE I,02/04/2026,<200,Active,01/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0456,Male,51,19,0.8,STAGE I,16/04/2026,<200,Active,16/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0457,Female,80,34,0.6,STAGE I,21/04/2026,<200,Active,21/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Dass,Dass General Hospital,Secondary,BAU-DASGH-0458,Female,52,18,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Gamawa,Gamawa General Hospital,Secondary,BAU-GAMGH-0459,Female,54,46,1,STAGE I,09/04/2026,>=200,Active,24/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Gamawa,Gamawa General Hospital,Secondary,BAU-GAMGH-0460,Male,40,32,1,STAGE II,10/04/2026,<200,Active,10/04/2026,Symptom screen (alone),,Presumptive TB,10/04/2026,TB-LAM,10/04/2026,Negative,Negative
+Bauchi,Gamawa,Gamawa General Hospital,Secondary,BAU-GAMGH-0461,Female,54,25,0.8,STAGE I,14/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Giade,Giade General Hospital,Secondary,BAU-GIAGH-0462,Female,56,30,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Giade,Giade General Hospital,Secondary,BAU-GIAGH-0463,Male,56,39,0.8,STAGE I,14/04/2026,>=200,Active,14/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Giade,Giade Maternal & Child Health Clinic,Primary,BAU-GIAMCHC-0464,Female,45,29,1.2,STAGE I,01/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Itas/Gadau,Itas General Hospital,Secondary,BAU-ITAGH-0465,Male,57,42,1.1,STAGE I,13/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Itas/Gadau,Itas General Hospital,Secondary,BAU-ITAGH-0466,Female,44,34,1.1,STAGE I,13/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Jama'are,Jama'are General Hospital,Secondary,BAU-JAMAGH-0467,Female,52,36,0.2,STAGE I,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Bauchi,Jama'are,Jama'are General Hospital,Secondary,BAU-JAMAGH-0468,Male,54,29,0.9,STAGE I,13/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Jama'are,Jama'are General Hospital,Secondary,BAU-JAMAGH-0469,Male,50,44,1,STAGE I,08/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Jama'are,Jama'are General Hospital,Secondary,BAU-JAMAGH-0470,Female,54,28,1,STAGE I,10/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Jama'are,Jama'are General Hospital,Secondary,BAU-JAMAGH-0471,Female,51,29,1,STAGE I,08/04/2026,<200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Ganjuwa,Kafin Madaki General Hospital,Secondary,BAU-KAFMGH-0472,Male,48,24,0.8,STAGE II,16/04/2026,<200,Active,16/04/2026,Chest X-Ray with CAD and/or Symptom screening,91,Presumptive TB,16/04/2026,Chest X-ray,16/04/2026,Suggestive for TB,Positive
+Bauchi,Ganjuwa,Kafin Madaki General Hospital,Secondary,BAU-KAFMGH-0473,Male,23,9,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Zaki,Katagum Zaki General Hospital,Secondary,BAU-KATZGH-0474,Female,42,28,1.2,STAGE I,02/04/2026,>=200,Active,02/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Bauchi,Zaki,Katagum Zaki General Hospital,Secondary,BAU-KATZGH-0475,Male,15,5,1.2,STAGE I,02/04/2026,>=200,Active,02/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Bauchi,Zaki,Katagum Zaki General Hospital,Secondary,BAU-KATZGH-0476,Male,13,6,1.2,STAGE I,02/04/2026,>=200,Active,02/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Bauchi,Zaki,Katagum Zaki General Hospital,Secondary,BAU-KATZGH-0477,Female,55,29,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Lere PHC,Primary,BAU-LERP-0478,Male,28,13,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Lere PHC,Primary,BAU-LERP-0479,Female,55,39,0.8,STAGE I,15/04/2026,>=200,Active,15/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Misau,Misau General Hospital,Secondary,BAU-MISGH-0480,Female,44,34,1.2,STAGE I,02/04/2026,>=200,Active,20/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Misau,Misau General Hospital,Secondary,BAU-MISGH-0481,Male,48,53,0.6,STAGE I,21/04/2026,>=200,Active,21/04/2026,Symptom screen (alone),,Presumptive TB,21/04/2026,TB-LAM,21/04/2026,Positive,Positive
+Bauchi,Misau,Misau General Hospital,Secondary,BAU-MISGH-0482,Male,45,24,1,STAGE I,08/04/2026,<200,Active,08/04/2026,Symptom screen (alone),,Presumptive TB,08/04/2026,TB-LAM,08/04/2026,Negative,Negative
+Bauchi,Bauchi,Ni ima Consultant,Secondary,BAU-NIIC-0483,Male,85,48,1,STAGE I,08/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Ni ima Consultant,Secondary,BAU-NIIC-0484,Female,98,37,1,STAGE I,08/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0485,Female,55,40,0.6,STAGE I,22/04/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,22/04/2026,TB-LAMP,22/04/2026,Negative,Negative
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0486,Male,66,27,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0487,Female,58,25,1.1,STAGE I,07/04/2026,>=200,Active,22/04/2026,Symptom screen (alone),,No signs or symptoms of TB,07/04/2026,TB-LAM,07/04/2026,Negative,Negative
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0488,Female,47,30,1.2,STAGE I,03/04/2026,>=200,Died,03/04/2026,Symptom screen (alone),,Presumptive TB,03/04/2026,TB-LAM,03/04/2026,Positive,Positive
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0489,Female,86,37,0,STAGE I,08/05/2026,<200,Active,08/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0490,Female,66,27,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0491,Male,40,45,1,STAGE I,09/04/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,09/04/2026,TB-LAMP,09/04/2026,Negative,Negative
+Bauchi,Ningi,Ningi General Hospital,Secondary,BAU-NINGH-0492,Female,40,35,0.2,STAGE I,04/05/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,04/05/2026,TB-LAMP,04/05/2026,Negative,Negative
+Bauchi,Bauchi,Reemee Clinic,Secondary,BAU-REEC-0493,Male,85,44,1,STAGE I,09/04/2026,>=200,Active,09/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Reemee Clinic,Secondary,BAU-REEC-0494,Male,80,41,1.1,STAGE I,07/04/2026,>=200,Active,07/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Reemee Clinic,Secondary,BAU-REEC-0495,Female,63,25,1,STAGE I,08/04/2026,>=200,Active,08/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Reemee Clinic,Secondary,BAU-REEC-0496,Male,37,24,0.8,STAGE III,15/04/2026,<200,Died,14/04/2026,Symptom screen (alone),,Presumptive TB,14/04/2026,Gene Xpert,,,
+Bauchi,Shira,Shira Yana General Hospital,Secondary,BAU-SHIYGH-0497,Female,62,30,0.1,STAGE I,07/05/2026,>=200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,State Low Cost Primary Health Centre,Primary,BAU-STALCPHC-0498,Male,62,24,0.9,STAGE I,13/04/2026,>=200,Active,13/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,State Low Cost Primary Health Centre,Primary,BAU-STALCPHC-0499,Female,75,40,1,STAGE I,09/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0500,Female,60,30,0.1,STAGE I,07/05/2026,>=200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0501,Male,52,35,1.2,STAGE I,02/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0502,Male,65,19,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0503,Female,60,38,0.9,STAGE I,13/04/2026,>=200,Active,27/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0504,Female,55,18,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0505,Female,55,17,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0506,Female,40,29,0.4,STAGE I,28/04/2026,>=200,Active,28/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0507,Female,50,16,0.8,STAGE I,16/04/2026,>=200,Active,30/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Tafawa-Balewa,Tafawa-Balewa General Hospital,Secondary,BAU-TAFBGH-0508,Female,55,17,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0509,Female,45,28,0.4,STAGE I,27/04/2026,<200,Active,27/04/2026,Chest X-Ray with CAD and/or Symptom screening,27,Presumptive TB,27/04/2026,Gene Xpert,27/04/2026,MTB not detected,Negative
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0510,Female,60,19,0.1,STAGE I,07/05/2026,<200,Active,07/05/2026,Symptom screen (alone),,No signs or symptoms of TB,07/05/2026,TB-LAMP,07/05/2026,Negative,Negative
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0511,Female,44,54,1,STAGE I,10/04/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0512,Female,62,27,0.5,STAGE I,23/04/2026,>=200,Active,23/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0513,Female,39,39,0.9,STAGE I,13/04/2026,<200,Active,13/04/2026,Symptom screen (alone),,Presumptive TB,13/04/2026,Gene Xpert,13/04/2026,MTB not detected,Negative
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0514,Female,47,13,0.3,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0515,Female,55,29,0.3,STAGE I,29/04/2026,>=200,Active,29/04/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0516,Female,47,39,0.2,STAGE I,04/05/2026,<200,Active,04/05/2026,Symptom screen (alone),,Presumptive TB,04/05/2026,TB-LAMP,04/05/2026,Positive,Positive
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0517,Female,67,26,0.1,STAGE I,05/05/2026,>=200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Toro,Toro General Hospital,Secondary,BAU-TORGH-0518,Male,66,54,0,STAGE I,08/05/2026,<200,Active,08/05/2026,Chest X-Ray with CAD and/or Symptom screening,24,No signs or symptoms of TB,08/05/2026,TB-LAM,08/05/2026,Negative,Negative
+Bauchi,Bauchi,Urban Maternity,Primary,BAU-URBM-0519,Male,55,38,27.5,STAGE I,01/04/2026,>=200,Active Restart,01/04/2026,Symptom screen (alone),,Presumptive TB,,,,,
+Bauchi,Bauchi,Urban Maternity,Primary,BAU-URBM-0520,Male,32,14,135.1,STAGE I,05/05/2026,<200,Active,05/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Bauchi,Urban Maternity,Primary,BAU-URBM-0521,Female,51,18,1.2,STAGE I,02/04/2026,>=200,Active,04/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,
+Bauchi,Warji,Warji General Hospital,Secondary,BAU-WARGH-0522,Female,55,34,0.1,STAGE I,06/05/2026,<200,Active,06/05/2026,Symptom screen (alone),,No signs or symptoms of TB,,,,,

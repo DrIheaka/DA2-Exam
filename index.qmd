@@ -1,0 +1,1816 @@
+---
+title: "Effectiveness of Tuberculosis Screening among People Living with HIV: A Comparative Evaluation of Symptom Screening and Chest X-Ray with Computer-Assisted Diagnosis (CAD) in the ACE-2 Project"
+subtitle: "Data Analytics II Capstone, Case Study 1"
+author: "Iheaka Ezieme | 2025-MMBA-8-029"
+date: today 
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    code-fold: true
+    code-tools: true
+    fig-cap-location: bottom
+    self-contained: true
+    df-print: kable
+    include-in-header:
+      text: |
+        <style>
+        p {
+          text-align: justify;
+          hyphens: auto;
+        }
+        </style>
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+# Executive Summary
+
+This analysis addresses two operational questions facing the ACE-2 HIV care and treatment project: whether chest X-ray with computer-assisted diagnosis (CAD) is a more effective TB screening tool than the standard four-symptom check, and which clinical and demographic variables predict a positive TB diagnosis among people living with HIV. The dataset is a five-week extract from the ACE-2 RADET file (1 April to 9 May 2026) of 522 clients on antiretroviral therapy across 77 (those who assayed clients' CD4 count and screened for during the period, out of the 91) health facilities in Kano, Jigawa and Bauchi states.
+
+Three findings emerge from the five techniques applied. The diagnostic cascade narrows sharply, with only the small sub-cohort that reached diagnostic confirmation informing the outcome question. The CAD modality differs measurably from symptom screening on the presumptive-case transition, an effect that survives multivariable adjustment. Clients in the low CD4 stratum and at advanced WHO clinical stage carry materially higher adjusted odds of a confirmed TB diagnosis, with the two predictors operating independently of each other.
+
+The recommendation is a phased, risk-stratified scale-up of CAD CXR within the ACE-2 mechanism, prioritising facilities serving the highest concentration of high-risk clients, while retaining the four-symptom check as the universal first-line screen.
+
+# Professional Disclosure
+
+I work with a public health non-profit, Georgetown Global Health Nigeria (GGHN) as the Technical Advisor for Adult Antiretroviral Therapy in the ACE-2 Project. ACE-2 is an HIV prevention, care and treatment project in Kano, Jigawa and Bauchi States, funded by PEPFAR through the US Department of State.
+
+Tuberculosis (TB) is the leading opportunistic infection among people living with HIV (PLHIVs), and the greatest contributor to morbidity and mortality in that population (World Health Organization \[WHO\], 2023). Thus, early detection and treatment of TB improve the length and quality of life for PLHIVs, making routine TB screening in clinics a requirement for all treatment programs. TB screening has traditionally been done using the 4-symptom check (Getahun et al., 2011) in all health facilities, with the recent introduction of Chest X-Ray with computer-assisted diagnosis in 10 of the 91 ACE-2 facilities (WHO, 2021).
+
+The business question this analysis addresses is whether chest X-ray with computer-assisted diagnosis is a more effective TB screening tool than the standard symptom screen, and which clinical and demographic variables predict a positive TB diagnosis. The relevance of each of the five required techniques to that question and to my role is set out below.
+
+**Exploratory Data Analysis.** As a Technical Advisor, I review monthly RADET (Retention and Audit Determination Tool) extracts from the 91 ACE-2 facilities and routinely summarise cohort characteristics for project leadership, the State HIV programs, and the PEPFAR country team. Exploratory data analysis (Tukey, 1977; Wickham & Grolemund, 2023) enables me to profile distributions, flag missing or implausible values, and identify structural gaps in the cascade before any inferential claim is made. In this dataset, the technique reveals that roughly three-quarters of the TB-diagnostic columns are missing by design, because only presumptive cases enter the sample-and-test step. Also, the weight distribution carries tails requiring a manual review. Without this step, every downstream comparison risks being driven by data-quality artefacts rather than by real clinical signal.
+
+**Data Visualisation.** The audience for TB-cascade findings is often mixed and not alway technical. Facility coordinators want to know where their site loses clients along the cascade; the GGHN monitoring & evaluation team prepares slide decks for State Department reviewers; and the State Ministry of Health needs single-glance comparisons of CAD-equipped versus symptom-only sites. The grammar of graphics (Wilkinson, 2005; Wickham, 2016) provides a disciplined vocabulary for matching each comparison to the right geom and annotation, so that five weeks of programmatic data remain legible across these stakeholder groups. Stable colour keys for outcome and facility tier further reduce cognitive load when the same panel reappears in different audiences' decks.
+
+**Hypothesis Testing.** The decision facing ACE-2 leadership is whether to scale CAD-equipped chest X-ray screening from the current 10 sites to all 91, a step that carries direct procurement and operational costs. A defensible scale-up recommendation must show that any observed gap in TB-positivity rates between modalities is unlikely to be sampling noise (Adi, 2026). Chi-squared and Fisher's exact tests on the screening modality by presumptive-TB contingency, t-tests on continuous predictors stratified by outcome, and Levene-checked ANOVA on duration on ART across facility types provide that evidence. The same logic underwrites secondary questions about targeted screening for clients with CD4 below 200 or advanced WHO clinical stage.
+
+**Correlation Analysis.** Clinical predictors in HIV/TB co-infection are rarely independent. WHO clinical stage moves with CD4 stratum, age tracks duration on ART, and CAD scores exist only for the subset of clients who received the new screening modality. Before any multivariable model is fit, we need to know which predictors carry overlapping information, because unrecognised multicollinearity inflates standard errors and destabilises coefficient estimates (Adi, 2026). Spearman and Kendall rank correlations are particularly suited to this dataset because several predictors are ordinal, and a Pearson coefficient would misstate the strength of association on those variables.
+
+**Logistic Regression.** The business question turns on a binary outcome (TB positive or negative on diagnostic test) and therefore calls for logistic regression (Hosmer et al., 2013). The model returns odds ratios, which clinicians and program managers read intuitively and which translate directly into screening protocol amendments. It also estimates the independent contribution of CAD screening modality, after adjustment for age, sex, weight, duration on ART, clinical stage and CD4. This provides the cleanest available answer to the cost-effectiveness side of the scale-up question. Given the modest number of TB-positive events in five weeks of data, the model will be specified parsimoniously and, where convergence is unstable, fit with a penalised-likelihood correction (Firth, 1993).
+
+# Data Collection and Sampling
+
+## Source system and extraction
+
+The primary data source for this analysis is the **ACE-2 Combined RADET (Retention and Audit Determination Tool), FY26 Q3 Week 6**, an internal weekly programmatic extract compiled by the Monitoring & Evaluation (M&E) team at Georgetown Global Health Nigeria (GGHN). The RADET aggregates client-level antiretroviral therapy records from facility electronic medical record systems across all 91 ACE-2 health facilities in Kano, Jigawa and Bauchi states and is the authoritative weekly cut used for project performance reviews. The Week 6 file was circulated to project staff by the M&E and Data Quality Advisor on 11 May 2026 and obtained by the author in his routine role as Technical Advisor for Adult ART. However, the author worked with previous week RADET files to decide on the necessary data elements and business question for this study, as well as all data cleaning and modifications required to pass the ACE-2 data privacy requirements.
+
+## Sampling frame and time period
+
+The sampling frame is the set of clients on antiretroviral therapy with a **CD4 result recorded in April or May 2026** across the three ACE-2 supported states. April was chosen as the window's start because the TB screening fields required for this analysis (screening modality, CAD score, TB status) were first systematically populated in the RADET in that month; an earlier window would yield extensive structural missingness in the very variables on which the business question depends. The cut-off date for the extract is 9 May 2026, giving a window of five weeks and one day. After all inclusion and exclusion rules were applied, the final analytic dataset contains **522 clients across 77 health facilities** in 55 LGAs.
+
+## Inclusion and exclusion rules
+
+The raw RADET extract was filtered sequentially in Microsoft Excel before any analysis in R:
+
+```{r}
+#| label: tbl-inclusion
+#| echo: false
+
+tibble::tribble(
+  ~Step, ~Rule,
+  "1", "Retain only clients with a CD4 result date in April or May 2026 (the period in which TB screening fields are populated).",
+  "2", "Exclude clients flagged as invalid by the project's data-quality check.",
+  "3", "Exclude clients with no recorded Current ART Status.",
+  "4", "Exclude clients whose TB sample collection date is earlier than 1 April 2026. Rows with a blank sample date are retained, because they represent clients who were screened but did not progress to sampling (a key feature of the cascade we wish to study)."
+) |>
+  gt::gt() |>
+  gt::tab_header(title = "Sequential inclusion and exclusion rules") |>
+  gt::cols_label(Step = "#", Rule = "Filter applied to the RADET extract")
+```
+
+## De-identification
+
+All PEPFAR and ACE-2 project identifiers (project unique IDs, ART numbers, facility codes, NDR identifiers) were removed from the dataset before any analysis. A new internal identifier was constructed from a three-letter state code, a facility acronym derived from the first significant words of the facility name, and a four-digit sequential number (for example, `KAN-AMH-0001`). The format is deliberately distinct from the ACE-2 and PEPFAR client-ID conventions so that the analytic dataset cannot be reverse-engineered to the source records.
+
+## Derived variables
+
+Five derived variables were added to support the analysis. Each is documented below along with the rule used to construct it.
+
+```{r}
+#| label: tbl-derived
+#| echo: false
+
+tibble::tribble(
+  ~Variable, ~Derivation,
+  "Patient ID",
+  "State code + facility acronym + 4-digit sequential number (e.g. KAN-AMH-0001).",
+  "Facility Type",
+  "Tertiary = teaching hospitals and federal medical centres; Primary = primary health centres, comprehensive health centres, maternal-and-child-health clinics; Secondary = all other facilities.",
+  "Duration on ART (months)",
+  "(9 May 2026 minus ART start date) divided by 30.4375, rounded to one decimal place.",
+  "Binary TB Diagnostic Result",
+  "All textual variants of a positive result (Positive, MTB detected, Suggestive for TB) recoded to 'Positive'; all variants of a negative result (Negative, MTB not detected, Not detected, Not suggestive for TB) recoded to 'Negative'.",
+  "Last CD4 Count",
+  "Inconsistent strings (200, >200, =>200) harmonised into the two intended programmatic strata (<200 and >=200)."
+) |>
+  gt::gt() |>
+  gt::tab_header(title = "Derived variables added during pre-processing") |>
+  gt::cols_label(Variable = "Derived variable", Derivation = "Construction rule")
+```
+
+After variable construction, all columns not required for the analysis were dropped, leaving the 22 variables listed in Section 4. The cleaned file was exported as a CSV and is the file consumed by the R chunks in this document.
+
+## Ethical approval and data governance
+
+Although the RADET is an internal programmatic extract rather than human subjects research data, GGHN's data privacy and use policy requires written sign-off from the M&E and Data Quality Advisor before any project dataset is used outside its primary programmatic purpose. The cleaned and de-identified CSV was therefore submitted on 11 May 2026 for compliance review and was approved for academic use on 12 May 2026 by Bridget Nnenna Okosa, M&E Advisor / Data Quality Analyst, ACE-2, Georgetown Global Health Nigeria (B. N. Okosa, personal communication, 12 May 2026). Approval was issued subject to five conditions:
+
+```{r}
+#| label: tbl-conditions
+#| echo: false
+
+tibble::tribble(
+  ~Condition, ~Detail,
+  "1", "The data will be used strictly for academic purposes related to the Data Analytics course at Lagos Business School.",
+  "2", "Access to the dataset and any resulting analyses is limited to the author and the relevant LBS faculty members overseeing the course.",
+  "3", "The dataset will not be shared with unauthorised individuals or organisations.",
+  "4", "Any presentation or report generated from the project will use aggregated findings only and will not include information that could identify individual clients or facilities, unless expressly authorised.",
+  "5", "The dataset will be securely stored and deleted or archived appropriately upon completion of the project, in line with applicable data protection policies."
+) |>
+  gt::gt() |>
+  gt::tab_header(title = "Conditions attached to data-use approval (Okosa, 12 May 2026)") |>
+  gt::cols_label(Condition = "#", Detail = "Condition")
+```
+
+The full text of the approval correspondence is retained in the project records and can be supplied on request. In line with Condition 4, this document reports only aggregated and de-identified findings throughout.
+
+```{r}
+#| label: setup
+#| include: false
+
+# ---- Core data-handling -------------------------------------------------
+library(tidyverse)      # dplyr, tidyr, readr, purrr, stringr, ggplot2, lubridate
+library(janitor)        # clean_names(), tabyl()
+library(here)           # robust paths within the RStudio project
+
+# ---- EDA / summary tables ----------------------------------------------
+library(skimr)          # skim() distributional summaries
+library(gt)             # presentation-quality tables
+library(gtsummary)      # publication-ready summary & regression tables
+
+# ---- Visualisation helpers ---------------------------------------------
+library(patchwork)      # compose multi-panel ggplots
+library(scales)         # percent_format(), comma()
+library(ggcorrplot)     # correlation heatmaps
+
+# ---- Inferential statistics --------------------------------------------
+library(rstatix)        # tidy chi-square, t-test, ANOVA
+library(effectsize)     # Cramér's V, Cohen's d, eta-squared, odds ratios
+library(car)            # Levene's test, Type-II ANOVA, VIF
+
+# ---- Modelling ---------------------------------------------------------
+library(broom)          # tidy() / glance() / augment() model output
+library(performance)    # check_model() regression diagnostics
+library(pROC)           # ROC / AUC for the logistic model
+
+# ---- knitr / Quarto chunk defaults -------------------------------------
+knitr::opts_chunk$set(
+  echo       = TRUE,
+  message    = FALSE,
+  warning    = FALSE,
+  fig.width  = 8,
+  fig.height = 5,
+  fig.align  = "center",
+  dpi        = 110,
+  out.width  = "90%"
+)
+
+# ---- Consistent ggplot look-and-feel -----------------------------------
+theme_set(
+  theme_minimal(base_size = 12, base_family = "sans") +
+    theme(
+      plot.title.position = "plot",
+      plot.title          = element_text(face = "bold"),
+      plot.subtitle       = element_text(colour = "grey30"),
+      plot.caption        = element_text(colour = "grey45", hjust = 0),
+      panel.grid.minor    = element_blank(),
+      strip.text          = element_text(face = "bold")
+    )
+)
+
+# Consistent palettes used across all five technique sections
+pal_tb       <- c("Negative" = "#2E86AB", "Positive" = "#C0392B")
+pal_cd4      <- c("<200"     = "#C0392B", ">=200"    = "#2E86AB")
+pal_sex      <- c("Female"   = "#8E44AD", "Male"     = "#16A085")
+pal_facility <- c("Primary"  = "#27AE60",
+                  "Secondary"= "#F39C12",
+                  "Tertiary" = "#8E44AD")
+
+# Reproducibility for any resampling / jittering
+set.seed(2026)
+
+# Printing options
+options(
+  scipen          = 10,         # avoid scientific notation in tables
+  digits          = 3,
+  knitr.kable.NA  = "—"
+)
+
+# Reference date used to compute "Duration on ART (months)" in the source file
+ref_date <- as.Date("2026-05-09")
+```
+
+# Data Description
+
+This section gives a summary of the analytic dataset: what variables it contains, what data types they carry, how the numeric and categorical fields are distributed, and where (and why) values are missing. Substantive interpretation of those distributions, together with decisions about how to handle outliers, skewness and other data-quality concerns, is deferred to Section 5 where it is the explicit deliverable for the Exploratory Data Analysis technique.
+
+## Import and type coercion
+
+```{r}
+#| label: data-import
+
+tb_raw <- read_csv(
+  here("data", "TB Screening and diagnostic cascade data_April_May_2026.csv"),
+  show_col_types = FALSE
+) |>
+  clean_names()
+
+tb <- tb_raw |>
+  rename(
+    lga                 = l_g_a,
+    weight_kg           = current_weight_kg,
+    duration_art_months = duration_on_art_months,
+    clinical_stage      = clinical_staging_at_last_visit,
+    cd4_date            = date_of_last_cd4_count,
+    cd4_cat             = last_cd4_count,
+    art_status          = current_art_status,
+    screen_date         = date_of_tb_screening_yyyy_mm_dd,
+    screen_type         = tb_screening_type,
+    sample_date         = date_of_tb_sample_collection_yyyy_mm_dd,
+    diag_test           = tb_diagnostic_test_type,
+    result_date         = date_of_tb_diagnostic_result_received_yyyy_mm_dd,
+    diag_result         = tb_diagnostic_result,
+    tb_dx               = binary_tb_diagnostic_result
+  ) |>
+  mutate(
+    across(c(cd4_date, screen_date, sample_date, result_date),
+           ~ suppressWarnings(as.Date(.x))),
+    sex            = factor(sex, levels = c("Female", "Male")),
+    facility_type  = factor(facility_type,
+                            levels = c("Primary", "Secondary", "Tertiary"),
+                            ordered = TRUE),
+    clinical_stage = factor(clinical_stage,
+                            levels = c("STAGE I", "STAGE II", "STAGE III", "STAGE IV"),
+                            ordered = TRUE),
+    cd4_cat        = factor(cd4_cat, levels = c("<200", ">=200")),
+    art_status     = factor(art_status),
+    screen_type    = factor(screen_type),
+    tb_status      = factor(tb_status,
+                            levels = c("No signs or symptoms of TB",
+                                       "Presumptive TB",
+                                       "Currently on TB treatment")),
+    diag_test      = factor(diag_test),
+    tb_dx          = factor(tb_dx, levels = c("Negative", "Positive"))
+  )
+
+glimpse(tb)
+```
+
+## Dataset profile
+
+```{r}
+#| label: tbl-profile
+
+tibble(
+  Metric = c("Records (rows)",
+             "Variables (columns)",
+             "States represented",
+             "LGAs represented",
+             "Facilities represented"),
+  Value  = c(format(nrow(tb), big.mark = ","),
+             as.character(ncol(tb)),
+             as.character(n_distinct(tb$state)),
+             as.character(n_distinct(tb$lga)),
+             as.character(n_distinct(tb$facility_name)))
+) |>
+  gt() |>
+  tab_header(title = "Dataset profile") |>
+  cols_align(align = "left", columns = Metric)
+```
+
+## Variable inventory
+
+The 22 variables in the cleaned dataset are listed below with their R data type and analytic role.
+
+```{r}
+#| label: tbl-inventory
+
+inventory <- tribble(
+  ~Variable,             ~Type,     ~Role,            ~Description,
+  "state",               "factor",  "Geography",      "State of residence (Bauchi, Jigawa, Kano).",
+  "lga",                 "character","Geography",     "Local Government Area within the state.",
+  "facility_name",       "character","Geography",     "Health facility delivering ART services.",
+  "facility_type",       "ordered", "Geography",      "Service tier (Primary, Secondary, Tertiary).",
+  "patient_id",          "character","Identifier",    "De-identified unique client identifier.",
+  "sex",                 "factor",  "Demographic",    "Sex (Female, Male).",
+  "age",                 "numeric", "Demographic",    "Age in years at the date of screening.",
+  "weight_kg",           "numeric", "Anthropometric", "Current body weight (kilograms).",
+  "duration_art_months", "numeric", "Treatment",      "Months on ART, computed against 9 May 2026.",
+  "clinical_stage",      "ordered", "Clinical",       "WHO HIV clinical stage at last visit (I-IV).",
+  "cd4_date",            "Date",    "Clinical",       "Date the most recent CD4 count was assayed.",
+  "cd4_cat",             "factor",  "Clinical",       "Last CD4 count stratum (<200 or >=200 cells/uL).",
+  "art_status",          "factor",  "Treatment",      "Active, Active Restart, IIT, Died, Transferred Out.",
+  "screen_date",         "Date",    "Screening",      "Date of TB screening.",
+  "screen_type",         "factor",  "Screening",      "Screening modality (symptom screen alone or CXR with CAD).",
+  "cad_score",           "numeric", "Screening",      "CAD chest X-ray score (1-99); >=34 indicates presumptive TB.",
+  "tb_status",           "factor",  "Screening",      "Screening outcome (no signs, presumptive, currently on treatment).",
+  "sample_date",         "Date",    "Diagnostic",     "Date a diagnostic specimen was collected.",
+  "diag_test",           "factor",  "Diagnostic",     "Type of diagnostic test performed.",
+  "result_date",         "Date",    "Diagnostic",     "Date the diagnostic result was received.",
+  "diag_result",         "character","Diagnostic",    "Full text of the diagnostic result.",
+  "tb_dx",               "factor",  "Outcome",        "Binary TB diagnostic result (Negative, Positive)."
+)
+
+inventory |>
+  gt(groupname_col = "Role") |>
+  tab_header(title = "Variable inventory",
+             subtitle = "22 columns, grouped by analytic role") |>
+  cols_align(align = "left", columns = everything()) |>
+  tab_options(row_group.font.weight = "bold")
+```
+
+## Distributions of numeric variables
+
+```{r}
+#| label: tbl-numeric-summary
+
+tb |>
+  select(age, weight_kg, duration_art_months, cad_score) |>
+  skim() |>
+  yank("numeric") |>
+  select(skim_variable, n_missing, complete_rate,
+         mean, sd, p0, p25, p50, p75, p100) |>
+  gt() |>
+  fmt_number(columns = c(mean, sd, p0, p25, p50, p75, p100), decimals = 1) |>
+  fmt_percent(columns = complete_rate, decimals = 1) |>
+  tab_header(title = "Numeric variables: distributional summary") |>
+  cols_label(
+    skim_variable = "Variable", n_missing = "N missing",
+    complete_rate = "Complete", mean = "Mean", sd = "SD",
+    p0 = "Min", p25 = "Q1", p50 = "Median", p75 = "Q3", p100 = "Max"
+  )
+```
+
+```{r}
+#| label: fig-num-distributions
+#| fig-cap: "Histograms of the four numeric variables. Dashed lines mark the median; the CAD-score panel restricts to clients screened with chest X-ray and computer-assisted diagnosis, and the dotted red line marks the presumptive-TB threshold of 34."
+#| fig-height: 7
+
+hist_panel <- function(data, x, fill, title, xlab, binwidth) {
+  ggplot(data, aes({{ x }})) +
+    geom_histogram(binwidth = binwidth, fill = fill,
+                   colour = "white", alpha = 0.9) +
+    geom_vline(aes(xintercept = median({{ x }}, na.rm = TRUE)),
+               linetype = "dashed", colour = "black") +
+    labs(title = title, x = xlab, y = "Count")
+}
+
+p_age <- hist_panel(tb, age, "#2980B9",
+                    "Age", "Years", 2)
+p_wt  <- hist_panel(tb, weight_kg, "#16A085",
+                    "Current weight", "Kilograms", 5)
+p_dur <- hist_panel(tb, duration_art_months, "#8E44AD",
+                    "Duration on ART", "Months", 6) +
+         scale_x_continuous(limits = c(0, NA))
+p_cad <- hist_panel(filter(tb, !is.na(cad_score)),
+                    cad_score, "#E67E22",
+                    "CAD score (CXR sub-sample)", "Score (1-99)", 5) +
+         geom_vline(xintercept = 34, colour = "#C0392B",
+                    linetype = "dotted", linewidth = 0.7) +
+         annotate("text", x = 34, y = Inf,
+                  label = "  Presumptive\n  threshold = 34",
+                  hjust = 0, vjust = 1.2, size = 3, colour = "#C0392B")
+
+(p_age | p_wt) / (p_dur | p_cad)
+```
+
+## Distributions of categorical variables
+
+```{r}
+#| label: tbl-categorical-summary
+
+tb |>
+  select(sex, facility_type, clinical_stage, cd4_cat,
+         art_status, screen_type, tb_status, tb_dx) |>
+  tbl_summary(
+    label = list(
+      sex            ~ "Sex",
+      facility_type  ~ "Facility type",
+      clinical_stage ~ "WHO clinical stage",
+      cd4_cat        ~ "Last CD4 count",
+      art_status     ~ "Current ART status",
+      screen_type    ~ "TB screening modality",
+      tb_status      ~ "TB screening outcome",
+      tb_dx          ~ "Binary TB diagnostic result"
+    ),
+    missing      = "ifany",
+    missing_text = "Missing"
+  ) |>
+  modify_header(label ~ "**Variable**") |>
+  bold_labels()
+```
+
+```{r}
+#| label: fig-cat-distributions
+#| fig-cap: "Bar charts of the categorical variables most relevant to the screening question. Counts and within-variable percentages are annotated on each bar."
+#| fig-height: 8
+
+cat_bar <- function(data, x, fill, title) {
+  data |>
+    count({{ x }}) |>
+    filter(!is.na({{ x }})) |>
+    mutate(
+      pct        = n / sum(n),
+      label_text = sprintf("%s: %d (%.0f%%)",
+                           as.character({{ x }}), n, 100 * pct)
+    ) |>
+    ggplot(aes(x = fct_reorder({{ x }}, n), y = n)) +
+    geom_col(fill = fill, width = 0.7) +
+    geom_text(aes(label = label_text),
+              hjust = -0.05, size = 3.1) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.55))) +
+    coord_flip() +
+    labs(title = title, x = NULL, y = "Count") +
+    theme(
+      axis.text.y    = element_blank(),
+      axis.ticks.y   = element_blank(),
+      plot.margin    = margin(8, 14, 8, 4)
+    )
+}
+
+p_sex    <- cat_bar(tb, sex,            "#8E44AD", "Sex")
+p_fac    <- cat_bar(tb, facility_type,  "#F39C12", "Facility type")
+p_cd4    <- cat_bar(tb, cd4_cat,        "#C0392B", "Last CD4 count")
+p_stage  <- cat_bar(tb, clinical_stage, "#2980B9", "WHO clinical stage")
+p_screen <- cat_bar(tb, screen_type,    "#16A085", "TB screening modality")
+p_status <- cat_bar(tb, tb_status,      "#34495E", "TB screening outcome")
+
+(p_sex    | p_fac) /
+(p_cd4    | p_stage) /
+(p_screen | p_status)
+
+## Missing value analysis
+
+```{r}
+#| label: tbl-missing
+
+miss_tbl <- tb |>
+  summarise(across(everything(), ~ sum(is.na(.x)))) |>
+  pivot_longer(everything(),
+               names_to  = "variable",
+               values_to = "n_missing") |>
+  mutate(pct_missing = n_missing / nrow(tb)) |>
+  filter(n_missing > 0) |>
+  arrange(desc(n_missing)) |>
+  mutate(
+    cause = case_when(
+      variable %in% c("sample_date", "diag_test",
+                      "result_date", "diag_result", "tb_dx") ~
+        "Structural: only presumptive cases enter the diagnostic pipeline",
+      variable == "cad_score" ~
+        "Structural: CAD score generated only when CXR-with-CAD modality is used",
+      variable == "screen_date" ~
+        "Likely data-quality: screening date not recorded",
+      variable == "tb_status" ~
+        "Likely data-quality: screening done but outcome not captured",
+      variable == "weight_kg" ~
+        "Likely data-quality: weight not recorded at visit",
+      TRUE ~ "Review individually"
+    )
+  )
+
+miss_tbl |>
+  select(Variable = variable,
+         `N missing` = n_missing,
+         `% missing` = pct_missing,
+         `Likely cause` = cause) |>
+  gt() |>
+  fmt_percent(columns = `% missing`, decimals = 1) |>
+  tab_header(title = "Variables with any missing values",
+             subtitle = sprintf("Out of %s patient records",
+                                format(nrow(tb), big.mark = ",")))
+```
+
+```{r}
+#| label: fig-missingness
+#| fig-cap: "Variables with any missing values, ordered by percentage missing. Diagnostic-cascade fields are missing by design; weight, screening date and screening outcome are the variables most likely to reflect under-recording at the facility."
+#| fig-height: 5
+
+miss_tbl |>
+  ggplot(aes(x = pct_missing, y = fct_reorder(variable, n_missing))) +
+  geom_col(fill = "#C0392B", width = 0.7) +
+  geom_text(aes(label = sprintf("%d (%.1f%%)", n_missing, 100 * pct_missing)),
+            hjust = -0.05, size = 3.2) +
+  scale_x_continuous(labels = percent_format(accuracy = 1),
+                     expand = expansion(mult = c(0, 0.18))) +
+  labs(x = "Percentage missing", y = NULL,
+       title = "Missingness profile")
+```
+
+# Exploratory Data Analysis (EDA)
+
+In section 4, we described *what* the data contains. This section is the first interrogation of it: where do the values look unusual, where is the shape of a distribution likely to violate the assumptions of the inferential tests we are about to run, and what do we propose to do about each finding before any formal model is fit?
+
+## What is EDA about?
+
+Exploratory data analysis is the disciplined inspection of data with summary statistics and graphs before any inferential test or model is fit (Tukey, 1977). Its founding insight is that headline summary statistics can be identical across data sets with radically different shapes, so that visualisation is not decoration but evidence (Anscombe, 1973). For this case, the technique covers four tasks: identify outliers, characterise the shape of each distribution, decide whether transformations or robust methods are required, and document the data-quality issues that constrain the inferential work that follows.
+
+## Why is EDA relevant to this study?
+
+This analysis will influence ACE-2 management's decision TB screening protocols. Recommending CAD chest X-ray for facility-level scale-up, or amending the screening protocol for clients with CD4 below 200, are decisions that commit program resources. A defensible recommendation must rule out the most common silent failures of routine programmatic data, such as a small number of extreme values that drive a regression coefficient, a heavily skewed predictor that misleads a t-test, or structural missingness mistaken for under-recording. EDA is the audit that allows the final recommendations to survive scrutiny by all relevant stakeholders.
+
+## Why visualisation precedes summary statistics: Anscombe's quartet
+
+```{r}
+#| label: fig-anscombe
+#| fig-cap: "Anscombe's quartet (Anscombe, 1973). All four datasets share the same x and y means, variances, correlation coefficient and ordinary-least-squares regression line, but their shapes are entirely different. The lesson generalises to TB programmatic data: identical screening positivity rates can mask very different cascade dynamics, so we visualise before we test."
+#| fig-height: 3
+
+anscombe_long <- anscombe |>
+  pivot_longer(everything(),
+               names_to = c(".value", "set"),
+               names_pattern = "(.)(.)")
+
+anscombe_long |>
+  ggplot(aes(x, y)) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE,
+              colour = "#C0392B", linewidth = 0.6) +
+  geom_point(size = 2.2, colour = "#2980B9", alpha = 0.85) +
+  facet_wrap(~ paste0("Set ", set), nrow = 1) +
+  labs(x = "x", y = "y")
+```
+
+## Outlier detection
+
+Box-and-whisker plots provide a quick visual scan of unusual values, and the 1.5 × IQR rule (Tukey, 1977) is the standard numeric flag for values that fall outside the central 50% of a distribution by more than one and a half inter-quartile ranges.
+
+```{r}
+#| label: fig-boxplots
+#| fig-cap: "Box-and-whisker plots of the four numeric variables. Points beyond the whiskers (1.5 x IQR from the nearer quartile) are flagged in red and tabulated below."
+#| fig-height: 4
+
+tb |>
+  select(Age = age,
+         `Weight (kg)` = weight_kg,
+         `Duration on ART (months)` = duration_art_months,
+         `CAD score` = cad_score) |>
+  pivot_longer(everything(), names_to = "variable", values_to = "value") |>
+  filter(!is.na(value)) |>
+  ggplot(aes(y = value, x = "")) +
+  geom_boxplot(width = 0.45, fill = "#3498DB", alpha = 0.75,
+               outlier.colour = "#C0392B", outlier.size = 2) +
+  facet_wrap(~ variable, scales = "free_y", nrow = 1,
+           labeller = label_wrap_gen(width = 18)) +
+  labs(x = NULL, y = "Value") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+```{r}
+#| label: tbl-outliers
+
+is_outlier <- function(x) {
+  q <- quantile(x, c(0.25, 0.75), na.rm = TRUE)
+  iqr <- q[2] - q[1]
+  (x < q[1] - 1.5 * iqr) | (x > q[2] + 1.5 * iqr)
+}
+
+tb |>
+  select(Age = age,
+         `Weight (kg)` = weight_kg,
+         `Duration on ART (months)` = duration_art_months,
+         `CAD score` = cad_score) |>
+  summarise(across(everything(),
+                   list(n_non_missing  = ~ sum(!is.na(.x)),
+                        n_outliers     = ~ sum(is_outlier(.x), na.rm = TRUE),
+                        min_outlier    = ~ {x <- .x[is_outlier(.x) & !is.na(.x)];
+                                            if (length(x) == 0) NA_real_ else min(x)},
+                        max_outlier    = ~ {x <- .x[is_outlier(.x) & !is.na(.x)];
+                                            if (length(x) == 0) NA_real_ else max(x)}),
+                   .names = "{.col}__{.fn}")) |>
+  pivot_longer(everything(),
+               names_to = c("Variable", ".value"),
+               names_pattern = "(.*)__(.*)") |>
+  mutate(`% outliers` = n_outliers / n_non_missing) |>
+  select(Variable, `N observed` = n_non_missing,
+         `N outliers` = n_outliers, `% outliers`,
+         `Smallest outlier` = min_outlier,
+         `Largest outlier`  = max_outlier) |>
+  gt() |>
+  fmt_percent(columns = `% outliers`, decimals = 1) |>
+  fmt_number(columns = c(`Smallest outlier`, `Largest outlier`), decimals = 1) |>
+  sub_missing(missing_text = "—") |>
+  tab_header(title = "Outliers flagged by the 1.5 × IQR rule")
+```
+
+Clinically the weight outliers (above the upper whisker) and the long upper tail of duration on ART are the most notable findings, while the age outliers reflect a small paediatric subgroup mixed into an otherwise adult cohort. CAD scores show no outliers, which is expected because the score is bounded between 1 and 99.
+
+## Distribution shape and skewness
+
+Skewness summarises asymmetry in a single number: values near zero indicate a roughly symmetric distribution; absolute values above 1 indicate heavy skew that can distort the mean, inflate the variance of regression estimates, and violate the normality assumption of a t-test (Wickham & Grolemund, 2023).
+
+```{r}
+#| label: tbl-skewness
+
+skew <- function(x) {
+  x <- x[!is.na(x)]
+  n <- length(x)
+  if (n < 3) return(NA_real_)
+  m <- mean(x); s <- sd(x)
+  (n / ((n - 1) * (n - 2))) * sum(((x - m) / s)^3)
+}
+
+tb |>
+  select(Age = age,
+         `Weight (kg)` = weight_kg,
+         `Duration on ART (months)` = duration_art_months,
+         `CAD score` = cad_score) |>
+  summarise(across(everything(),
+                   list(mean = ~ mean(.x, na.rm = TRUE),
+                        median = ~ median(.x, na.rm = TRUE),
+                        sd = ~ sd(.x, na.rm = TRUE),
+                        skewness = skew),
+                   .names = "{.col}__{.fn}")) |>
+  pivot_longer(everything(),
+               names_to = c("Variable", ".value"),
+               names_pattern = "(.*)__(.*)") |>
+  mutate(Shape = case_when(
+    is.na(skewness)        ~ "—",
+    abs(skewness) < 0.5    ~ "Approximately symmetric",
+    abs(skewness) < 1      ~ "Moderately skewed",
+    TRUE                   ~ "Highly skewed"
+  )) |>
+  rename(Mean = mean, Median = median, SD = sd, Skewness = skewness) |>
+  gt() |>
+  fmt_number(columns = c(Mean, Median, SD, Skewness), decimals = 2) |>
+  tab_header(title = "Distribution shape and skewness diagnostic")
+```
+
+Duration on ART is the variable with the heaviest skew. A log transformation is the conventional remedy and is shown below for comparison; it will be the form used whenever duration on ART enters a parametric model in the remainder of this document.
+
+```{r}
+#| label: fig-log-transform
+#| fig-cap: "Duration on ART before and after the log1p transformation. The transformed variable is approximately symmetric and is the form used in the regression model in Section 9."
+#| fig-height: 3.5
+
+p_raw <- tb |>
+  filter(!is.na(duration_art_months)) |>
+  ggplot(aes(duration_art_months)) +
+  geom_histogram(binwidth = 6, fill = "#8E44AD",
+                 colour = "white", alpha = 0.9) +
+  labs(title = "Untransformed",
+       x = "Duration on ART (months)", y = "Count")
+
+p_log <- tb |>
+  filter(!is.na(duration_art_months)) |>
+  ggplot(aes(log1p(duration_art_months))) +
+  geom_histogram(bins = 25, fill = "#27AE60",
+                 colour = "white", alpha = 0.9) +
+  labs(title = "After log(1 + months)",
+       x = "log(1 + Duration on ART)", y = "Count")
+
+p_raw | p_log
+```
+
+## Data-quality issues identified and adopted handling
+
+EDA surfaces five concrete issues. Each is documented below with the handling decision that the rest of the analysis adopts.
+
+```{r}
+#| label: tbl-data-quality
+
+tribble(
+  ~Issue, ~Evidence, ~Handling,
+  "Structural missingness in the diagnostic pipeline",
+  "Sample date, diagnostic test, result date, diagnostic result and binary TB result are missing for roughly three-quarters of records, because by protocol only clients flagged as Presumptive TB enter the sampling step.",
+  "Treated as informative missingness, not imputed. Inference on the diagnostic outcome (tb_dx) is restricted to the sub-cohort with a result.",
+  "CAD score available only for the CXR sub-sample",
+  "cad_score is recorded only when screening modality is CXR-with-CAD, which is in use at 10 of the 91 ACE-2 facilities.",
+  "Kept as-is. Where CAD score is used as a predictor, the model is fit on the CXR sub-sample and the limitation is noted.",
+  "Plausible-range outliers in weight",
+  "Range observed is 3.4 to 175 kg. The lower tail reflects paediatric records (age below 15); the upper tail (>120 kg) is implausible for the population and most likely reflects data-entry error.",
+  "Records with weight above the 99th percentile are winsorised before use in any continuous model. A sensitivity analysis excluding paediatric records is reported alongside the primary regression.",
+  "Heavy right skew in duration on ART",
+  "Median of about 1 month against a maximum exceeding 300 months. The cohort mixes newly initiated clients with long-term ART veterans.",
+  "Reported as median (IQR) in descriptive tables and entered into all parametric models as log1p(duration_art_months).",
+  "Class imbalance in the diagnostic outcome",
+  "Among the diagnostic sub-cohort, positives are about 12% of resulted samples and about 3% of the full line list.",
+  "Logistic regression is specified parsimoniously and, where convergence is unstable, refitted with a penalised-likelihood correction (Firth, 1993). Effect sizes are reported alongside p-values."
+) |>
+  gt() |>
+  tab_header(title = "Data-quality issues and adopted handling") |>
+  cols_width(Issue ~ px(190),
+             Evidence ~ px(380),
+             Handling ~ px(360))
+```
+
+**What do these mean in simple terms?** The dataset is fit for the question we have set it, but with three caveats that the analysis will respect from here on. First, three-quarters of the rows are silent on the diagnostic outcome, not because the data were poorly captured but because, by clinical protocol, only the clients flagged as presumptive TB at screening proceed to diagnostic sampling. Any claim about what predicts a positive TB diagnosis therefore speaks to that sub-cohort, not to the full ART population, and the document is explicit about this throughout. Second, two of the numeric variables have unusual values that warrant care: a small number of very high body weights that look like data-entry errors will be capped before any model is fitted, and a small paediatric subgroup is retained but reported separately in a sensitivity analysis. Third, the time clients have spent on ART is heavily skewed: a few clients on therapy for decades sit alongside many who started this quarter, so the variable enters every model on a log scale to keep its effect from being dominated by the long tail. None of these issues invalidates the analysis; together they bound how confidently each finding can be stated, and they are the explicit reason the recommendation in Section 10 will be expressed as an odds-ratio range rather than a single point estimate.
+
+# Data Visualisation
+
+This section uses the same data from Section 4 to answer comparative questions that bear directly on the business problem: where do clients drop off the screening cascade, does CAD chest X-ray identify more presumptive and confirmed TB than the symptom screen alone, and which clinical and demographic strata carry the highest TB positivity?
+
+## What is visualisation about?
+
+The grammar of graphics frames every chart as the mapping of a data variable onto a visual aesthetic and the rendering of that mapping through a geometric object (Wilkinson, 2005; Wickham, 2016). Effective programmatic charts prioritise the perceptual tasks that humans perform most accurately (position on a common scale before length, length before angle, angle before area, area before colour saturation), label values directly when there are few categories, and keep colour keys stable across panels so that a reviewer learns the legend once and reuses it everywhere. Each chart below is built to answer one specific comparison, not to be decorative.
+
+## Why is visualisation relevant to this study?
+
+The recommendations from this study rest on two questions that are best argued visually before they are tested formally. The first is whether the CAD modality changes the *shape* of the cascade by surfacing more presumptive cases or more confirmed TB. The second is which subgroups of PLHIVs already carry the highest TB burden, because if positivity concentrates in clients with low CD4 or advanced WHO stage, a risk-stratified screening protocol may be more cost-effective than blanket scale-up of CAD. Both audiences for this analysis (clinical site coordinators on one hand, donors and government agencies for HIV control on the other) read charts before they read p-values, so the visualisations are the place where the recommendation begins to be built.
+
+## The TB screening and diagnostic cascade
+
+```{r}
+#| label: fig-cascade
+#| fig-cap: "TB screening and diagnostic cascade for the ACE-2 line list. Counts and proportions are relative to the 522 eligible clients in the period 1 April to 9 May 2026. The number with a sample collected (Step 4) exceeds the number formally flagged as Presumptive TB at screening (Step 3) because the operational protocol allows referral for sampling on the basis of CAD score before the TB-status field is updated."
+#| fig-height: 4.5
+
+cascade <- tibble(
+  step = c("1. Eligible (line list)",
+           "2. Screened for TB",
+           "3. Flagged Presumptive TB at screening",
+           "4. Sample collected",
+           "5. Diagnostic result received",
+           "6. Confirmed TB positive"),
+  n = c(
+    nrow(tb),
+    sum(!is.na(tb$screen_date)),
+    sum(tb$tb_status %in% c("Presumptive TB", "Currently on TB treatment"),
+        na.rm = TRUE),
+    sum(!is.na(tb$sample_date)),
+    sum(!is.na(tb$result_date)),
+    sum(tb$tb_dx == "Positive", na.rm = TRUE)
+  )
+) |>
+  mutate(
+    pct  = n / first(n),
+    step = factor(step, levels = rev(step))
+  )
+
+cascade |>
+  ggplot(aes(x = n, y = step)) +
+  geom_col(fill = "#2980B9", alpha = 0.85, width = 0.7) +
+  geom_text(aes(label = sprintf("%d  (%.1f%%)", n, 100 * pct)),
+            hjust = -0.05, size = 3.5) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.18))) +
+  labs(title    = "TB screening and diagnostic cascade",
+       subtitle = "Counts and proportion of the eligible line list at each step",
+       x = "Number of clients", y = NULL)
+```
+
+The cascade tells one story at a glance: nearly every eligible client was screened, but only a fraction enter the diagnostic pipeline, and only a small minority of those tested return a positive result. Interestingly, more samples were collected than the number of presumptive clients flagged. This is likely from data entry errors in the electonic medical records at the treatment facilities. The shape of the cascade also shows where the analysis can and cannot speak — questions about the diagnostic outcome are necessarily restricted to the final two steps.
+
+## Comparing CAD chest X-ray with symptom screening
+
+```{r}
+#| label: fig-modality
+#| fig-cap: "Comparison of the two screening modalities on three metrics: presumptive TB rate at screening, share of screened clients who eventually received a diagnostic result, and confirmed-TB-positivity rate among those resulted. Cell counts are annotated on each bar."
+#| fig-height: 4.5
+#| fig-width: 10
+
+modality <- tb |>
+  filter(!is.na(screen_type)) |>
+  group_by(screen_type) |>
+  summarise(
+    n_screened       = n(),
+    n_presumptive    = sum(tb_status %in%
+                             c("Presumptive TB", "Currently on TB treatment"),
+                           na.rm = TRUE),
+    n_resulted       = sum(!is.na(tb_dx)),
+    n_positive       = sum(tb_dx == "Positive", na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  mutate(
+    `Presumptive TB rate`        = n_presumptive / n_screened,
+    `Reached diagnostic result`  = n_resulted / n_screened,
+    `TB+ among those resulted`   = ifelse(n_resulted > 0,
+                                          n_positive / n_resulted, NA_real_)
+  ) |>
+  select(screen_type, n_screened,
+         `Presumptive TB rate`,
+         `Reached diagnostic result`,
+         `TB+ among those resulted`) |>
+  pivot_longer(cols = -c(screen_type, n_screened),
+               names_to = "metric", values_to = "value") |>
+  mutate(metric = factor(metric,
+                         levels = c("Presumptive TB rate",
+                                    "Reached diagnostic result",
+                                    "TB+ among those resulted")))
+
+modality |>
+  ggplot(aes(x = screen_type, y = value, fill = screen_type)) +
+  geom_col(width = 0.4, alpha = 0.9) +
+  geom_text(aes(label = ifelse(is.na(value), "—",
+                               scales::percent(value, accuracy = 0.1))),
+            vjust = -0.5, size = 3.4) +
+  facet_wrap(~ metric, scales = "free_y",
+             labeller = label_wrap_gen(width = 22)) +
+  scale_x_discrete(labels = ~ str_wrap(.x, width = 18),
+                   expand = expansion(add = 0.6)) +
+  scale_y_continuous(labels = percent_format(),
+                     expand = expansion(mult = c(0, 0.25))) +
+  scale_fill_manual(values = c("#7F8C8D", "#2980B9")) +
+  labs(title    = "Screening modality: presumptive, diagnostic and confirmed-positive rates",
+       subtitle = "Each modality compared on the three cascade transitions",
+       x = NULL, y = NULL) +
+  theme(legend.position = "none")
+```
+
+This single panel is the visual core of the business question. If CAD chest X-ray identifies a materially higher presumptive rate and that gap converts into a higher confirmed-positivity rate, the case for scale-up is strengthened. If the gap is small or reverses at the diagnostic step, the case weakens. Section 7 formalises whichever pattern this chart reveals.
+
+## TB positivity by clinical and demographic strata
+
+```{r}
+#| label: fig-strata
+#| fig-cap: "Confirmed TB positivity rate by candidate predictor, restricted to clients who reached the diagnostic step. Each bar shows the percentage of positive results within the level, with the cell count of positives over total resulted clients annotated above."
+#| fig-height: 5.5
+
+tb_dx_only <- tb |> filter(!is.na(tb_dx))
+
+strat <- bind_rows(
+  tb_dx_only |>
+    group_by(level = as.character(sex)) |>
+    summarise(n = n(),
+              n_pos = sum(tb_dx == "Positive"),
+              .groups = "drop") |>
+    mutate(predictor = "Sex"),
+  tb_dx_only |>
+    group_by(level = as.character(cd4_cat)) |>
+    summarise(n = n(),
+              n_pos = sum(tb_dx == "Positive"),
+              .groups = "drop") |>
+    mutate(predictor = "CD4 stratum"),
+  tb_dx_only |>
+    group_by(level = as.character(clinical_stage)) |>
+    summarise(n = n(),
+              n_pos = sum(tb_dx == "Positive"),
+              .groups = "drop") |>
+    mutate(predictor = "WHO clinical stage"),
+  tb_dx_only |>
+    group_by(level = as.character(facility_type)) |>
+    summarise(n = n(),
+              n_pos = sum(tb_dx == "Positive"),
+              .groups = "drop") |>
+    mutate(predictor = "Facility type")
+) |>
+  filter(!is.na(level)) |>
+  mutate(pct_pos = n_pos / n)
+
+strat |>
+  ggplot(aes(x = level, y = pct_pos)) +
+  geom_col(fill = "#C0392B", width = 0.6, alpha = 0.9) +
+  geom_text(aes(label = sprintf("%.0f%%\n(%d/%d)",
+                                100 * pct_pos, n_pos, n)),
+            vjust = -0.1, size = 3, lineheight = 0.9) +
+  facet_wrap(~ predictor, scales = "free_x", ncol = 2) +
+  scale_y_continuous(labels = percent_format(accuracy = 1),
+                     expand = expansion(mult = c(0, 0.3))) +
+  labs(title    = "TB positivity by candidate predictor",
+       subtitle = "Confirmed TB+ as % of clients reaching diagnostic, within each level",
+       x = NULL, y = "% positive")
+```
+
+These four panels are a visual preview of the multivariable model in Section 9. Strata where the positivity rate is markedly higher than the dataset baseline (sex, CD4 stratum, clinical stage, facility tier) are the candidates whose statistical significance the regression model will quantify.
+
+## CAD score against TB outcome
+
+```{r}
+#| label: fig-cad-vs-outcome
+#| fig-cap: "Distribution of CAD chest-X-ray scores by TB diagnostic outcome, restricted to clients who received the CXR-with-CAD modality and reached the diagnostic step. The dotted red line marks the operational presumptive-TB threshold (score >= 34)."
+#| fig-height: 4
+
+cad_panel <- tb |>
+  filter(!is.na(cad_score), !is.na(tb_dx))
+
+cad_panel |>
+  ggplot(aes(x = tb_dx, y = cad_score, fill = tb_dx)) +
+  geom_violin(alpha = 0.45, trim = FALSE, colour = NA) +
+  geom_jitter(width = 0.12, alpha = 0.8, size = 1.8, colour = "black") +
+  geom_hline(yintercept = 34, linetype = "dotted",
+             colour = "#C0392B", linewidth = 0.6) +
+  annotate("text", x = 0.55, y = 36,
+           label = "Presumptive threshold = 34",
+           hjust = 0, size = 3, colour = "#C0392B") +
+  scale_fill_manual(values = pal_tb) +
+  scale_y_continuous(limits = c(0, 100)) +
+  labs(title    = "CAD score by TB diagnostic outcome (CXR sub-sample)",
+       subtitle = sprintf("N = %d clients with both a CAD score and a diagnostic result",
+                          nrow(cad_panel)),
+       x = NULL, y = "CAD score (1-99)") +
+  theme(legend.position = "none")
+```
+
+The violin shapes show how the score distribution shifts (or does not shift) between TB-positive and TB-negative clients in the CXR sub-sample. If TB-positive clients cluster well above the 34-point threshold and TB-negative clients sit predominantly below it, the score is doing the work the protocol expects of it; visual overlap between the two violins would call that calibration into question.
+
+**What do these mean in simple terms?** The four charts together set up the answer to both halves of the business question. The cascade chart shows that the ACE-2 system is very good at the first step (almost every eligible client is screened). However,only about one in three screened clients enters the diagnostic pipeline, which is the reason any modality comparison must be made on the small but informative diagnostic sub-cohort rather than on the full line list. The modality panel is the headline chart for the scale-up decision; whichever direction it points, that is the direction the formal test in Section 7 will either confirm or refute. The predictor stratification panel highlights the patient profiles where TB positivity is concentrated and tells, before any model is fitted, which subgroups will dominate the regression in Section 9. The CAD-versus-outcome chart isolates the new technology's signal: if the score genuinely separates positives from negatives in this dataset, that is independent evidence for the scale-up decision; if it does not, the conclusion will need to lean on the modality-level comparison instead. None of these charts alone is a recommendation, but together they make the size and direction of the effects visible, so the formal tests that follow are read against a clear visual baseline.
+
+# Hypothesis Testing
+
+This section formalises the screening-modality and predictor patterns revealed in Section 6. Each visual comparison from the previous figures is paired here with the statistical test that decides whether the difference seen on the page is likely to be real or attributable to sampling variation, and each test is reported with both a p-value and an effect size so that the manager reading the recommendations can judge clinical importance as well as statistical significance.
+
+## What is hypothesis testing about?
+
+Frequentist hypothesis testing (Adi, 2026) pits a null hypothesis of no association or no difference against an alternative and asks how unlikely the observed data would be if the null were true. The p-value answers that probability question, while the effect size (Cramer's V, Cohen's d, rank-biserial r) measures how *large* the underlying difference is. Test selection follows a short decision tree: Pearson chi-squared for a categorical-by-categorical comparison when every expected cell count is at least five, otherwise Fisher's exact; Welch's t-test for a continuous variable across a binary outcome when Shapiro-Wilk does not reject normality in either group, otherwise the Mann-Whitney U rank-sum test. Because several tests are reported here, p-values close to 0.05 should be read as suggestive rather than confirmatory; the multivariable model in Section 9 is the place where the surviving signals are jointly assessed.
+
+## Why is hypothesis testing relevant to this study?
+
+Three programmatic questions are answered here. The first is whether CAD chest X-ray flags a different rate of presumptive TB than symptom screening alone — the first formal hurdle that any scale-up recommendation must clear. The second is whether, among clients who actually reached diagnostic confirmation, the modality predicts a positive result. The third is which of the candidate predictors (sex, CD4 stratum, WHO clinical stage, facility type, age, weight, duration on ART, CAD score) carry evidence of association strong enough to justify their inclusion in the regression model that follows. Each table below answers one of these questions in a form that can be quoted in a stakeholder review.
+
+## Screening modality and TB outcomes
+
+### Modality versus Presumptive TB at screening
+
+```{r}
+#| label: tbl-modality-presumptive
+
+tb_screened <- tb |>
+  filter(!is.na(screen_type), !is.na(tb_status)) |>
+  mutate(presumptive = factor(
+    if_else(tb_status %in% c("Presumptive TB", "Currently on TB treatment"),
+            "Presumptive", "Not presumptive"),
+    levels = c("Not presumptive", "Presumptive")
+  ))
+
+tab_mp  <- with(tb_screened, table(screen_type, presumptive))
+exp_mp  <- suppressWarnings(chisq.test(tab_mp)$expected)
+
+if (any(exp_mp < 5)) {
+  test_mp     <- fisher.test(tab_mp)
+  test_mp_nm  <- "Fisher's exact test"
+  test_mp_st  <- ""
+} else {
+  test_mp     <- chisq.test(tab_mp)
+  test_mp_nm  <- "Pearson chi-squared"
+  test_mp_st  <- sprintf("chi-squared(%d) = %.2f, ",
+                         test_mp$parameter, test_mp$statistic)
+}
+cv_mp <- as.numeric(effectsize::cramers_v(tab_mp)$Cramers_v)
+
+tab_mp |>
+  as.data.frame.matrix() |>
+  rownames_to_column("Screening modality") |>
+  mutate(Total            = `Not presumptive` + Presumptive,
+         `% Presumptive`  = sprintf("%.1f%%",
+                                    100 * Presumptive / Total)) |>
+  gt() |>
+  tab_header(
+    title    = "Screening modality × Presumptive TB classification",
+    subtitle = sprintf("%s: %sp = %s, Cramer's V = %.3f",
+                       test_mp_nm, test_mp_st,
+                       format.pval(test_mp$p.value, digits = 3, eps = 0.001),
+                       cv_mp)
+  )
+```
+
+### Modality versus confirmed TB diagnostic result
+
+```{r}
+#| label: tbl-modality-confirmed
+
+tb_mod_resulted <- tb |>
+  filter(!is.na(screen_type), !is.na(tb_dx))
+
+tab_mc <- with(tb_mod_resulted, table(screen_type, tb_dx))
+exp_mc <- suppressWarnings(chisq.test(tab_mc)$expected)
+
+if (any(exp_mc < 5)) {
+  test_mc    <- fisher.test(tab_mc)
+  test_mc_nm <- "Fisher's exact test"
+  test_mc_st <- ""
+} else {
+  test_mc    <- chisq.test(tab_mc)
+  test_mc_nm <- "Pearson chi-squared"
+  test_mc_st <- sprintf("chi-squared(%d) = %.2f, ",
+                        test_mc$parameter, test_mc$statistic)
+}
+cv_mc <- as.numeric(effectsize::cramers_v(tab_mc)$Cramers_v)
+
+tab_mc |>
+  as.data.frame.matrix() |>
+  rownames_to_column("Screening modality") |>
+  mutate(Total       = Negative + Positive,
+         `% Positive`= sprintf("%.1f%%",
+                               100 * Positive / Total)) |>
+  gt() |>
+  tab_header(
+    title    = "Screening modality × confirmed TB diagnostic result",
+    subtitle = sprintf("%s: %sp = %s, Cramer's V = %.3f",
+                       test_mc_nm, test_mc_st,
+                       format.pval(test_mc$p.value, digits = 3, eps = 0.001),
+                       cv_mc)
+  )
+```
+
+The first table answers the upstream cascade question: does CAD raise or lower the presumptive flag rate? The second answers the downstream question: among the clients who actually reached diagnostic confirmation, does modality predict a positive result? Both are required for the scale-up case, because a modality could shift the cascade at one stage and not the other.
+
+## Categorical predictors of confirmed TB
+
+```{r}
+#| label: tbl-categorical-tests
+
+tb_dx_only <- tb |> filter(!is.na(tb_dx))
+
+run_cat_test <- function(data, var, var_label) {
+  tab <- table(as.character(data[[var]]), data[["tb_dx"]])
+
+  exp_vals  <- suppressWarnings(chisq.test(tab)$expected)
+  use_fisher <- any(exp_vals < 5)
+
+  if (use_fisher) {
+    test_res  <- fisher.test(tab, workspace = 2e7)
+    test_name <- "Fisher's exact"
+    test_stat <- "—"
+  } else {
+    test_res  <- chisq.test(tab)
+    test_name <- "Chi-squared"
+    test_stat <- sprintf("%.2f (df=%d)",
+                         test_res$statistic, test_res$parameter)
+  }
+
+  cv <- as.numeric(effectsize::cramers_v(tab)$Cramers_v)
+
+  tibble(
+    Predictor    = var_label,
+    `N resulted` = sum(tab),
+    `% positive` = sprintf("%.1f%%",
+                           100 * sum(tab[, "Positive"]) / sum(tab)),
+    Test         = test_name,
+    Statistic    = test_stat,
+    `p-value`    = format.pval(test_res$p.value, digits = 3, eps = 0.001),
+    `Cramer's V` = sprintf("%.3f", cv)
+  )
+}
+
+cat_results <- bind_rows(
+  run_cat_test(tb_dx_only, "sex",            "Sex"),
+  run_cat_test(tb_dx_only, "cd4_cat",        "CD4 stratum (<200 / >=200)"),
+  run_cat_test(tb_dx_only, "clinical_stage", "WHO clinical stage"),
+  run_cat_test(tb_dx_only, "facility_type",  "Facility type")
+)
+
+cat_results |>
+  gt() |>
+  tab_header(
+    title    = "Tests of association: categorical predictors and confirmed TB",
+    subtitle = sprintf("All tests are on the %d clients who reached the diagnostic step",
+                       nrow(tb_dx_only))
+  )
+```
+
+For each row Fisher's exact replaces chi-squared whenever any expected cell count falls below five, which protects the inference against the small numbers that show up in WHO Stage III–IV cells and in the Primary-facility cells. The Cramer's V column gives a directly comparable strength-of-association measure across the four predictors, with conventional cutoffs of 0.10, 0.30 and 0.50 for small, medium and large effects respectively.
+
+## Continuous predictors of confirmed TB
+
+```{r}
+#| label: tbl-continuous-tests
+
+run_cont_test <- function(data, var, var_label, log_transform = FALSE) {
+  d    <- data |> filter(!is.na(.data[[var]]))
+  vals <- if (log_transform) log1p(d[[var]]) else d[[var]]
+  outc <- d$tb_dx
+
+  n_neg <- sum(outc == "Negative")
+  n_pos <- sum(outc == "Positive")
+
+  if (n_pos < 3 || n_neg < 3) {
+    return(tibble(
+      Predictor          = var_label,
+      N                  = nrow(d),
+      `Median (Neg)`     = sprintf("%.1f", median(vals[outc == "Negative"], na.rm = TRUE)),
+      `Median (Pos)`     = sprintf("%.1f", median(vals[outc == "Positive"], na.rm = TRUE)),
+      `Normality (SW p)` = "—",
+      Test               = "Insufficient N",
+      `p-value`          = "—",
+      `Effect size`      = "—"
+    ))
+  }
+
+  sw_neg <- shapiro.test(vals[outc == "Negative"])$p.value
+  sw_pos <- shapiro.test(vals[outc == "Positive"])$p.value
+  normal <- sw_neg > 0.05 && sw_pos > 0.05
+
+  if (normal) {
+    res    <- t.test(vals ~ outc)
+    nm     <- "Welch's t-test"
+    p_val  <- res$p.value
+    es     <- effectsize::cohens_d(vals ~ outc)
+    es_lab <- sprintf("Cohen's d = %.3f",
+                      as.numeric(es$Cohens_d))
+  } else {
+    res    <- suppressWarnings(wilcox.test(vals ~ outc))
+    nm     <- "Mann-Whitney U"
+    p_val  <- res$p.value
+    es     <- effectsize::rank_biserial(vals ~ outc)
+    es_lab <- sprintf("Rank-biserial r = %.3f",
+                      as.numeric(es$r_rank_biserial))
+  }
+
+  tibble(
+    Predictor          = var_label,
+    N                  = nrow(d),
+    `Median (Neg)`     = sprintf("%.1f", median(vals[outc == "Negative"], na.rm = TRUE)),
+    `Median (Pos)`     = sprintf("%.1f", median(vals[outc == "Positive"], na.rm = TRUE)),
+    `Normality (SW p)` = sprintf("Neg = %.3f, Pos = %.3f", sw_neg, sw_pos),
+    Test               = nm,
+    `p-value`          = format.pval(p_val, digits = 3, eps = 0.001),
+    `Effect size`      = es_lab
+  )
+}
+
+cont_results <- bind_rows(
+  run_cont_test(tb_dx_only, "age",                 "Age (years)"),
+  run_cont_test(tb_dx_only, "weight_kg",           "Weight (kg)"),
+  run_cont_test(tb_dx_only, "duration_art_months",
+                "Duration on ART, log(1 + months)",
+                log_transform = TRUE),
+  run_cont_test(tb_dx_only, "cad_score",
+                "CAD score (CXR sub-sample)")
+)
+
+cont_results |>
+  gt() |>
+  tab_header(
+    title    = "Tests of difference: continuous predictors by TB diagnostic outcome",
+    subtitle = "Test selected by Shapiro-Wilk normality check at alpha = 0.05 in each group"
+  )
+```
+
+Duration on ART enters the table on the log(1 + months) scale, in line with the EDA decision in Section 5 to log-transform that predictor before any parametric test. The CAD-score row is restricted to clients who received the CXR modality *and* reached the diagnostic step, which is the only subgroup where the variable is defined.
+
+**What do these mean in simple terms?** The hypothesis tests turn the visual patterns of Section 6 into numbered evidence. Two pieces of that evidence speak directly to the scale-up question. The modality-versus-presumptive table answers whether CAD chest X-ray casts a wider net at the screening stage — that is, whether it flags a materially larger share of clients for diagnostic follow-up than the symptom screen does. The modality-versus-confirmed table answers the complementary question of whether, *among* clients who actually reached diagnosis, the share returning a positive result differs by modality; this second test is the cost-effectiveness pivot, because a modality that adds presumptive cases without adding confirmed cases adds workload without adding case-finding yield. The categorical-predictor table identifies which of sex, CD4 stratum, WHO clinical stage and facility type carry an association with the diagnostic outcome strong enough to enter the multivariable model in Section 9, with Cramer's V telling the reader how big each effect is in standardised terms. The continuous-predictor table does the same job for age, weight, log-duration on ART and CAD score, and shows which variable will need a transformation to behave inside the regression. None of these results is taken as final until Section 9 has adjusted each predictor for all the others; the inference here tells the manager which signals are real, and the regression then tells them which signals are *still* real after the others are controlled.
+
+# Correlation Analysis
+
+In Section 7, we tested each candidate predictor against the diagnostic outcome one at a time. Before those predictors enter the multivariable model in Section 9, we have to check that they are not telling the same story twice. This section measures the pairwise association between every continuous and ordinal predictor on the candidate list, presents the result as a heatmap, and triages the pairs that the logistic regression will need to handle.
+
+## What is correlation analysis about?
+
+Three coefficients dominate applied correlation analysis (Adi, 2026). Pearson's r measures the linear association between two truly continuous variables and is sensitive to outliers. Spearman's rho replaces values with their ranks and captures monotonic association of any shape, which makes it the natural choice when variables are ordinal (WHO clinical stage, CD4 stratum, facility tier) or heavily skewed (duration on ART). Kendall's tau also works on ranks but evaluates concordance of every pair of observations and is more conservative in small samples and to tied values. None of the three implies causation; each tells the analyst only that two variables move together. The applied concern when planning a multivariable model is multicollinearity, the situation in which two or more predictors carry the same underlying information. Multicollinearity inflates standard errors, destabilises coefficient estimates and can flip the signs of otherwise sensible relationships.So, identifying it before fitting is part of the analyst's duty of care to the model output.
+
+## Why is correlation analysis relevant to this study?
+
+The candidate predictor list for the regression contains variables that the clinical literature suggests should travel together. CD4 stratum and WHO clinical stage both track HIV-disease severity; age and duration on ART both move with cohort tenure; weight tracks both age and clinical stage; CAD score is recorded only for the small CXR sub-sample and may carry information that overlaps with the symptom-based screening pathway. If two of these are correlated above the conventional 0.7 threshold, the model can carry only one of the pair, and the choice of which to keep is a defensible judgement call rather than an arbitrary one. The matrix below is the evidence on which that judgement will be made.
+
+## Continuous and ordinal predictors: Spearman heatmap
+
+```{r}
+#| label: fig-spearman-heatmap
+#| fig-cap: "Spearman rank correlations among the continuous and ordinal predictor candidates, computed on the 522-client cohort using pairwise-complete observations. Cells with non-significant correlations (p > 0.05) are left blank. Deeper blue indicates a stronger positive monotonic association, deeper red a stronger negative one; the rho values are written inside each significant cell."
+#| fig-width: 10
+#| fig-height: 7.5
+
+cor_main <- tb |>
+  mutate(
+    duration_log  = log1p(duration_art_months),
+    cd4_num       = as.numeric(cd4_cat),
+    stage_num     = as.numeric(clinical_stage),
+    facility_num  = as.numeric(facility_type)
+  ) |>
+  select(
+    `Age (years)`              = age,
+    `Weight (kg)`              = weight_kg,
+    `log(1+Duration ART)`      = duration_log,
+    `CD4 stratum`              = cd4_num,
+    `WHO clinical stage`       = stage_num,
+    `Facility type`            = facility_num
+  )
+
+spearman_mat <- cor(cor_main,
+                    method = "spearman",
+                    use    = "pairwise.complete.obs")
+
+# p-value matrix for Spearman (manual loop; cor_pmat is Pearson-only)
+n_vars     <- ncol(cor_main)
+spearman_p <- matrix(0, n_vars, n_vars,
+                     dimnames = list(colnames(cor_main),
+                                     colnames(cor_main)))
+for (i in seq_len(n_vars)) {
+  for (j in seq_len(n_vars)) {
+    if (i != j) {
+      spearman_p[i, j] <- suppressWarnings(
+        cor.test(cor_main[[i]], cor_main[[j]],
+                 method = "spearman",
+                 use    = "pairwise.complete.obs",
+                 exact  = FALSE)$p.value
+      )
+    }
+  }
+}
+
+# Wrap the row and column labels for the heatmap display only;
+# spearman_mat and spearman_p keep their original names for the
+# downstream Spearman / Kendall and multicollinearity tables.
+spearman_mat_disp <- spearman_mat
+spearman_p_disp   <- spearman_p
+wrapped_labels    <- str_wrap(colnames(spearman_mat), width = 11)
+rownames(spearman_mat_disp) <- wrapped_labels
+colnames(spearman_mat_disp) <- wrapped_labels
+rownames(spearman_p_disp)   <- wrapped_labels
+colnames(spearman_p_disp)   <- wrapped_labels
+
+ggcorrplot(spearman_mat_disp,
+           method        = "square",
+           type          = "lower",
+           lab           = TRUE,
+           lab_size      = 4.2,
+           p.mat         = spearman_p_disp,
+           insig         = "blank",
+           colors        = c("#B2182B", "#F7F7F7", "#2166AC"),
+           outline.color = "white",
+           tl.srt        = 0,
+           legend.title  = "Spearman\nrho") +
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5, size = 10),
+    axis.text.y = element_text(size = 10),
+    plot.margin = margin(10, 30, 10, 30)
+  )
+```
+
+## Spearman and Kendall side-by-side
+
+```{r}
+#| label: tbl-spearman-kendall
+
+kendall_mat <- cor(cor_main,
+                   method = "kendall",
+                   use    = "pairwise.complete.obs")
+
+spearman_long <- spearman_mat |>
+  as.data.frame() |>
+  rownames_to_column("Var1") |>
+  pivot_longer(cols = -Var1,
+               names_to  = "Var2",
+               values_to = "Spearman") |>
+  filter(Var1 < Var2)
+
+kendall_long <- kendall_mat |>
+  as.data.frame() |>
+  rownames_to_column("Var1") |>
+  pivot_longer(cols = -Var1,
+               names_to  = "Var2",
+               values_to = "Kendall") |>
+  filter(Var1 < Var2)
+
+combined <- left_join(spearman_long, kendall_long,
+                      by = c("Var1", "Var2")) |>
+  mutate(
+    Pair         = paste(Var1, "·", Var2),
+    `|Spearman|` = abs(Spearman),
+    Flag         = case_when(
+      `|Spearman|` >= 0.7 ~ "Strong",
+      `|Spearman|` >= 0.5 ~ "Moderate",
+      `|Spearman|` >= 0.3 ~ "Weak",
+      TRUE                ~ "Negligible"
+    )
+  ) |>
+  arrange(desc(`|Spearman|`))
+
+combined |>
+  select(Pair, Spearman, Kendall, Strength = Flag) |>
+  gt() |>
+  fmt_number(columns = c(Spearman, Kendall), decimals = 3) |>
+  tab_header(
+    title    = "Pairwise associations: Spearman and Kendall coefficients",
+    subtitle = "Sorted by absolute Spearman strength"
+  )
+```
+
+Spearman and Kendall agree closely in direction throughout the matrix; the absolute Kendall values are smaller by construction, but the ordering of pairs is unchanged. Where the two coefficients disagree, the analyst should suspect either ties (which Kendall handles more conservatively) or a non-monotonic pattern; neither situation arises here.
+
+## CAD score within the CXR sub-sample
+
+```{r}
+#| label: tbl-cad-correlations
+
+tb_cxr <- tb |>
+  filter(!is.na(cad_score)) |>
+  mutate(
+    duration_log  = log1p(duration_art_months),
+    cd4_num       = as.numeric(cd4_cat),
+    stage_num     = as.numeric(clinical_stage),
+    facility_num  = as.numeric(facility_type)
+  )
+
+predictor_lookup <- c(
+  `Age (years)`            = "age",
+  `Weight (kg)`            = "weight_kg",
+  `log(1+Duration ART)`    = "duration_log",
+  `CD4 stratum`            = "cd4_num",
+  `WHO clinical stage`     = "stage_num",
+  `Facility type`          = "facility_num"
+)
+
+cad_correlations <- tibble(
+  Predictor = names(predictor_lookup),
+  var       = predictor_lookup
+) |>
+  rowwise() |>
+  mutate(
+    Spearman     = cor(tb_cxr[[var]], tb_cxr$cad_score,
+                       method = "spearman",
+                       use    = "pairwise.complete.obs"),
+    `Spearman p` = suppressWarnings(
+      cor.test(tb_cxr[[var]], tb_cxr$cad_score,
+               method = "spearman",
+               exact  = FALSE)$p.value),
+    Kendall      = cor(tb_cxr[[var]], tb_cxr$cad_score,
+                       method = "kendall",
+                       use    = "pairwise.complete.obs"),
+    `Kendall p`  = suppressWarnings(
+      cor.test(tb_cxr[[var]], tb_cxr$cad_score,
+               method = "kendall",
+               exact  = FALSE)$p.value)
+  ) |>
+  ungroup() |>
+  select(-var) |>
+  arrange(desc(abs(Spearman)))
+
+cad_correlations |>
+  gt() |>
+  fmt_number(columns = c(Spearman, Kendall), decimals = 3) |>
+  fmt(columns = c(`Spearman p`, `Kendall p`),
+      fns = function(x) format.pval(x, digits = 3, eps = 0.001)) |>
+  tab_header(
+    title    = "CAD score correlations with the other predictors",
+    subtitle = sprintf("Restricted to the CXR sub-sample (N = %d)",
+                       nrow(tb_cxr))
+  )
+```
+
+CAD score is reported separately because it is defined only on the clients who received the CXR-with-CAD modality. The sub-sample is too small to support inclusion of CAD in the matrix above without throwing away most of the cohort. So the table here lets the model in Section 9 — which will fit CAD score on the CXR sub-sample only — be informed by the appropriate correlation evidence.
+
+## Multicollinearity triage for the regression section
+
+```{r}
+#| label: tbl-multicollinearity
+
+combined |>
+  filter(`|Spearman|` >= 0.3) |>
+  mutate(`Implication for the regression` = case_when(
+    `|Spearman|` >= 0.7 ~ "Strong overlap: include only one variable from the pair; choose the more clinically interpretable.",
+    `|Spearman|` >= 0.5 ~ "Moderate overlap: include both initially but inspect VIF; drop if VIF > 5.",
+    TRUE                ~ "Weak overlap: include both; report VIF as routine."
+  )) |>
+  select(Pair, Spearman, Strength = Flag, `Implication for the regression`) |>
+  gt() |>
+  fmt_number(columns = Spearman, decimals = 3) |>
+  tab_header(
+    title    = "Pairs flagged for the multivariable model",
+    subtitle = "Triage rules applied to the Spearman matrix above"
+  )
+```
+
+This is the working note the model in Section 9 inherits. Any pair flagged "Strong" must be reduced to one variable before the model is fit. Any pair flagged "Moderate" is fitted alongside both variables initially and reviewed by VIF after fitting; the same applies to weakly correlated pairs although the risk is low. The decisions taken on each flagged pair will be documented in Section 9 alongside the final variable list.
+
+**What do these mean in simple terms?** The correlation analysis tells the manager which of the candidate predictors carry overlapping information about HIV-disease severity, cohort tenure and care context, and which carry independent signal. Where two predictors move strongly together, the regression that follows cannot estimate their separate effects on TB positivity even if both are clinically meaningful; the analyst must choose one. The triage table at the end of the section is the place where those choices are made transparent rather than buried in the modelling step, so that a reviewer can see exactly which variables were dropped, which were kept, and why. CAD score is presented on its own because it is recorded for only a small subgroup of clients (those who received the new screening modality), so its associations with the other predictors are reported on that subgroup and will be carried into the regression accordingly. None of the correlations measured here implies that one variable causes another; they measure together, not why.
+
+# Logistic Regression
+
+Section 7 discussed the predictors that carry an unadjusted association with TB positivity. Section 8 showed the predictors that overlap with one another. This section combines the two findings into a multivariable logistic regression that estimates the independent effect of each predictor on the odds of a confirmed TB diagnosis, with the screening modality entering the same model so that the cost-effectiveness side of the scale-up question is answered, devoid of clinical confounding.
+
+## What is logistic regression about?
+
+When the outcome is binary, the linear model is replaced by the logistic model, which expresses the log-odds of the event as a linear combination of predictors and is estimated by maximum likelihood (Hosmer et al., 2013). Each estimated coefficient becomes an odds ratio (OR) after exponentiation. An OR above one indicates an increase in the odds of the event for a unit change in the predictor,while an OR below one a decrease, with the 95% confidence interval giving the precision of that estimate. Three diagnostic checks travel with every fitted logistic model: variance inflation factors to confirm that the multicollinearity decisions made earlier have not collapsed the design matrix, the receiver operating characteristic (ROC) curve and area under the curve (AUC) to summarise discrimination, and a check for separation or convergence failure that, where present, calls for a penalised-likelihood remedy such as Firth's correction (Firth, 1993).
+
+## Why is logistic regression relevant to this study?
+
+The recommendation that follows from this analysis is whether ACE-2 should fund the scale-up of CAD chest X-ray to all 91 facilities and, in either decision, which client profiles should be prioritised for diagnostic follow-up. The unadjusted tests in Section 7 cannot answer that question on their own because the predictors are entangled; a CD4-low client and a Stage-IV client are often the same client, and the marginal positivity rates of CD4 and WHO stage cannot both be added to a screening protocol without double-counting. The logistic regression below produces an independent odds ratio for each predictor with the others held fixed, which is the form a program manager can carry into a protocol amendment.
+
+## Variable list and analytic sample
+
+Following the EDA handling decisions in Section 5 and the multicollinearity triage in Section 8, the primary model carries the following predictors on the diagnostic sub-cohort (clients with a non-missing TB diagnostic result and a recorded screening modality):
+
+- screening modality (categorical, two levels)
+- age in years (continuous)
+- sex (categorical, two levels)
+- weight in kilograms (continuous, with the EDA winsorisation rule applied)
+- log(1 + duration on ART in months) (continuous; the log scale was established in the EDA section)
+- WHO clinical stage collapsed to Early (I–II) versus Advanced (III–IV) to avoid empty cells at Stages III–IV
+- CD4 stratum (categorical, two levels: <200 versus ≥200)
+- facility type (categorical, three levels)
+
+CAD score is fitted in a separate model on the CXR sub-sample only, because the score is undefined for the symptom-only modality and including it in the primary model would collapse the analytic sample to ~36 clients.
+
+```{r}
+#| label: tbl-model-sample
+
+tb_model <- tb |>
+  filter(!is.na(tb_dx), !is.na(screen_type)) |>
+  mutate(
+    duration_art_log = log1p(duration_art_months),
+    weight_kg_w      = if_else(weight_kg > quantile(weight_kg, 0.99,
+                                                    na.rm = TRUE),
+                               quantile(weight_kg, 0.99, na.rm = TRUE),
+                               weight_kg),
+    stage_collapsed  = factor(case_when(
+      clinical_stage %in% c("STAGE I",   "STAGE II")  ~ "Early (I-II)",
+      clinical_stage %in% c("STAGE III", "STAGE IV")  ~ "Advanced (III-IV)"
+    ),
+    levels = c("Early (I-II)", "Advanced (III-IV)"))
+  )
+
+n_total <- nrow(tb_model)
+n_pos   <- sum(tb_model$tb_dx == "Positive")
+
+tibble(
+  Metric = c("Analytic sample size (N)",
+             "TB-positive events",
+             "TB-negative events",
+             "Event rate",
+             "Approximate events per parameter (target >= 10)"),
+  Value  = c(format(n_total, big.mark = ","),
+             as.character(n_pos),
+             as.character(n_total - n_pos),
+             scales::percent(n_pos / n_total, accuracy = 0.1),
+             sprintf("%.1f", n_pos / 9))
+) |>
+  gt() |>
+  tab_header(title = "Analytic sample for the primary logistic regression",
+             subtitle = "Diagnostic sub-cohort with a recorded screening modality")
+```
+
+The events-per-parameter ratio is the most important number on this card. The convention is that logistic regression yields stable estimates when there are at least ten outcome events per model parameter. Where the ratio sits below that, the report acknowledges it, the multivariable estimates are interpreted with appropriate caution, and the sensitivity analysis at the end of the section is the place where any unstable estimate is stress-tested.
+
+## Primary multivariable model
+
+```{r}
+#| label: tbl-primary-model
+
+m_main <- glm(
+  tb_dx ~ screen_type + age + sex + weight_kg_w + duration_art_log +
+          stage_collapsed + cd4_cat + facility_type,
+  data   = tb_model,
+  family = binomial(link = "logit")
+)
+
+m_main |>
+  tbl_regression(
+    exponentiate = TRUE,
+    label = list(
+      screen_type      ~ "Screening modality",
+      age              ~ "Age (years)",
+      sex              ~ "Sex",
+      weight_kg_w      ~ "Weight (kg, winsorised)",
+      duration_art_log ~ "log(1 + Duration on ART)",
+      stage_collapsed  ~ "WHO clinical stage",
+      cd4_cat          ~ "CD4 stratum",
+      facility_type    ~ "Facility type"
+    ),
+    pvalue_fun = ~ style_pvalue(.x, digits = 3)
+  ) |>
+  add_glance_source_note(include = c(nobs, AIC, BIC, logLik)) |>
+  bold_labels() |>
+  modify_header(estimate = "**Adjusted OR**")
+```
+
+Each row reports the adjusted odds of TB positivity associated with a one-unit change in the corresponding predictor (or, for categorical predictors, with the named level relative to the reference). Odds ratios with confidence intervals that exclude 1 are conventionally treated as evidence of an effect; effect sizes far from 1 in either direction are the clinically actionable findings. The Section-10 recommendation will be built primarily around the screening-modality, CD4-stratum and WHO-stage rows of this table.
+
+## Multicollinearity: variance inflation factors
+
+```{r}
+#| label: tbl-vif
+
+vif_tbl <- performance::check_collinearity(m_main) |>
+  as_tibble() |>
+  mutate(
+    Interpretation = case_when(
+      VIF < 2.5 ~ "Negligible",
+      VIF < 5   ~ "Acceptable",
+      VIF < 10  ~ "Concerning",
+      TRUE      ~ "Problematic"
+    )
+  ) |>
+  select(Predictor = Term, VIF, `Tolerance` = Tolerance, Interpretation)
+
+vif_tbl |>
+  gt() |>
+  fmt_number(columns = c(VIF, Tolerance), decimals = 2) |>
+  tab_header(
+    title    = "Variance inflation factors for the primary model",
+    subtitle = "VIF < 5 indicates the multicollinearity triage from Section 8 was sufficient"
+  )
+```
+
+A VIF above 5 in any row would mean that the corresponding predictor's coefficient is being inflated by overlap with the rest of the design matrix; any row in the "Concerning" or "Problematic" tier would warrant returning to the Section 8 triage and dropping one variable from the corresponding correlated pair. Provided every row is in the Negligible or Acceptable tier, the model output above is interpreted as it stands.
+
+## Discrimination: ROC curve and AUC
+
+```{r}
+#| label: fig-roc
+#| fig-cap: "Receiver operating characteristic (ROC) curve for the primary logistic regression. The dashed diagonal is the line of no discrimination (AUC = 0.5); a model that perfectly ranks positives above negatives produces a curve that travels through the top-left corner (AUC = 1.0)."
+#| fig-height: 5
+#| fig-width: 6
+
+m_main_preds <- predict(m_main, type = "response")
+m_main_y     <- m_main$model$tb_dx     # the response actually used by the fit
+
+roc_main <- pROC::roc(response  = m_main_y,
+                      predictor = m_main_preds,
+                      levels    = c("Negative", "Positive"),
+                      direction = "<",
+                      quiet     = TRUE)
+auc_main <- as.numeric(pROC::auc(roc_main))
+
+pROC::ggroc(roc_main, legacy.axes = TRUE, colour = "#2980B9",
+            linewidth = 0.9) +
+  geom_abline(intercept = 0, slope = 1,
+              linetype = "dashed", colour = "grey60") +
+  scale_x_continuous(labels = percent_format()) +
+  scale_y_continuous(labels = percent_format()) +
+  coord_equal() +
+  labs(
+    title    = sprintf("Primary model ROC curve (AUC = %.3f)", auc_main),
+    subtitle = sprintf("N = %d clients used by the model", length(m_main_y)),
+    x = "1 - Specificity (false-positive rate)",
+    y = "Sensitivity (true-positive rate)"
+  )
+```
+
+The AUC is the probability that a randomly drawn positive client is ranked higher by the model than a randomly drawn negative one. Conventional benchmarks read 0.50 as random, 0.70 as fair, 0.80 as good, and 0.90 as excellent discrimination. **Programmatic interpretation**: an AUC at the upper end of fair-to-good is enough to justify the model as a triage tool, while a value at or below 0.60 indicates that the predictors as a whole add little to a random-screening protocol.
+
+## CAD score model on the CXR sub-sample
+
+```{r}
+#| label: tbl-cad-model
+
+tb_cad <- tb |>
+  filter(!is.na(tb_dx), !is.na(cad_score)) |>
+  mutate(duration_art_log = log1p(duration_art_months))
+
+n_cad     <- nrow(tb_cad)
+n_cad_pos <- sum(tb_cad$tb_dx == "Positive")
+
+m_cad <- glm(
+  tb_dx ~ cad_score + age + sex + cd4_cat,
+  data   = tb_cad,
+  family = binomial(link = "logit")
+)
+
+m_cad |>
+  tbl_regression(
+    exponentiate = TRUE,
+    label = list(
+      cad_score ~ "CAD score (per 1-point increase)",
+      age       ~ "Age (years)",
+      sex       ~ "Sex",
+      cd4_cat   ~ "CD4 stratum"
+    ),
+    pvalue_fun = ~ style_pvalue(.x, digits = 3)
+  ) |>
+  add_glance_source_note(include = c(nobs, AIC, BIC)) |>
+  bold_labels() |>
+  modify_header(estimate = "**Adjusted OR**") |>
+  modify_caption(
+    sprintf("CXR sub-sample model: N = %d, TB-positive events = %d.
+             Adjusted odds of TB positivity per one-point increase in CAD score,
+             controlling for age, sex and CD4 stratum.",
+            n_cad, n_cad_pos)
+  )
+```
+
+The CAD-score model is reported separately because the score is undefined outside the CXR sub-sample, and is specified parsimoniously because the events-per-parameter ratio in this subset is small. The headline number is the odds ratio attached to CAD score itself: it estimates how the odds of TB positivity change for each one-point increase in the radiology score, after adjusting for the strongest clinical confounders. A statistically significant OR meaningfully above one is direct evidence that the score carries predictive information beyond the demographics and CD4 stratum, and is therefore the strongest single piece of statistical evidence available for the scale-up case.
+
+## Sensitivity analyses
+
+Two sensitivity analyses are pre-specified in the EDA section and reported here for completeness. First, the primary model is refit excluding paediatric records (age below 15) to confirm that the adult-cohort interpretation is not driven by the small paediatric subgroup; large changes in coefficient direction or magnitude would indicate that age and weight effects need to be reported on adults only.
+
+```{r}
+#| label: tbl-sensitivity-adult
+
+tb_adult <- tb_model |> filter(age >= 15)
+
+m_adult <- glm(
+  tb_dx ~ screen_type + age + sex + weight_kg_w + duration_art_log +
+          stage_collapsed + cd4_cat + facility_type,
+  data   = tb_adult,
+  family = binomial(link = "logit")
+)
+
+m_adult |>
+  tbl_regression(exponentiate = TRUE,
+                 pvalue_fun = ~ style_pvalue(.x, digits = 3)) |>
+  modify_caption(
+    sprintf("Adult-only sensitivity model: N = %d, TB-positive events = %d.",
+            nrow(tb_adult), sum(tb_adult$tb_dx == "Positive"))
+  ) |>
+  modify_header(estimate = "**Adjusted OR**")
+```
+
+Second, if any coefficient in the primary model shows extreme magnitude (an OR above ~50 or below ~0.02) or if the model fails to converge for any of the rare-event predictors, the same specification can be refitted with Firth's penalised likelihood (Firth, 1993) using `logistf::logistf()`. The penalisation shrinks coefficient estimates toward zero in a way that produces finite, interpretable odds ratios, even when a predictor perfectly separates positives from negatives in the sub-sample. Where the primary model converges and produces estimates with finite confidence intervals, Firth's correction is not invoked.
+
+**What do these mean in simple terms?** The regression answers the business question by attaching a single number, an odds ratio with a confidence interval, to each of the candidate predictors of a positive TB diagnosis. The screening-modality row of the primary model is the answer to the first half of the question: it estimates how much the odds of a confirmed TB result change between the CXR-with-CAD modality and the symptom screen, with age, sex, weight, duration on ART, WHO stage, CD4 stratum and facility type held constant; if the odds ratio is above one and its confidence interval excludes one, the case for scale-up is strengthened on statistical grounds. The clinical-predictor rows of the same table are the answer to the second half: they identify the patient profiles (advanced WHO stage, low CD4, particular facility tiers) whose adjusted odds of TB positivity are materially higher than the reference, and these are the subgroups in which a risk-stratified screening protocol would concentrate its diagnostic effort. The CAD-score model on the CXR sub-sample tells the manager whether, within the new modality, the radiology score itself adds information once the demographics and CD4 are taken into account; an odds ratio comfortably above one on this row is independent evidence for adopting CAD as more than a triage filter. The ROC curve and AUC give a single-number summary of how well the model separates positives from negatives, while the variance-inflation table and the adult-only sensitivity model confirm that the headline odds ratios are not artefacts of overlapping predictors or of the small paediatric subgroup. The integrated recommendation, built by combining these outputs with the visualisations in Section 6 and the unadjusted tests in Section 7, is set out in Section 10.
+
+# Integrated Findings
+
+The five techniques in Sections 5 through 9 were not five independent analyses; each was a different lens on the same business question. Exploratory data analysis bounded what the data could support. Visualisation surfaced the patterns that warranted formal testing. Hypothesis testing decided which patterns were unlikely to be sampling noise. Correlation analysis identified which signals were independent of each other. Logistic regression produced the adjusted effect sizes on which a programmatic decision can be made. This section sets out, in one place, how the five outputs converge on a single recommendation that the project can act on.
+
+## How the five analyses fit together
+
+```{r}
+#| label: tbl-convergence
+
+tribble(
+  ~Technique, ~`What it established`, ~`Contribution to the recommendation`,
+
+  "Exploratory Data Analysis (Sec. 5)",
+  "Defined the analytic boundary: only the ~25% of clients who reached the diagnostic step inform the outcome question. Surfaced three data-quality issues (weight outliers, log-skew of duration on ART, class imbalance in TB+) and committed the rest of the document to a protocol for handling them.",
+  "Tells the manager which population the recommendation speaks to (the diagnostic sub-cohort) and which qualifications must be attached when extrapolating to the full ART cohort.",
+
+  "Data Visualisation (Sec. 6)",
+  "The cascade chart shows the screening pipeline at a glance and where clients drop off. The modality panel shows the directional difference between CXR-with-CAD and symptom-only screening across all three cascade transitions. The predictor-stratification panel highlights the patient profiles in which TB positivity concentrates.",
+  "Provides the visual storyline that a non-technical stakeholder can read in 30 seconds before the numerical evidence is presented, and signals which predictors will carry the regression in Section 9.",
+
+  "Hypothesis Testing (Sec. 7)",
+  "Formal chi-squared and Fisher tests on the modality-by-outcome contingencies, and Welch t-tests or Mann-Whitney tests on the continuous predictors stratified by TB outcome. Effect sizes are reported alongside p-values.",
+  "Converts the visual patterns into defensible statistical evidence. Confirms whether the modality difference and predictor associations are larger than would be expected by chance, before any multivariable adjustment.",
+
+  "Correlation Analysis (Sec. 8)",
+  "Spearman and Kendall pairwise associations among continuous and ordinal predictors. Multicollinearity triage rule applied at |rho| >= 0.7 (drop), 0.5 (check VIF), 0.3 (routine VIF).",
+  "Pre-empts the multicollinearity that would otherwise destabilise the regression. Tells the model in Section 9 which predictors are carrying overlapping information and therefore cannot be entered together.",
+
+  "Logistic Regression (Sec. 9)",
+  "Adjusted odds ratios for screening modality and each clinical predictor on the diagnostic sub-cohort, with VIF confirming the multicollinearity triage was sufficient, AUC summarising discrimination, and an adult-only sensitivity model confirming the effect estimates do not depend on the small paediatric subgroup.",
+  "Produces the decision-grade evidence: a single number (the adjusted modality OR) for the scale-up case, and a profile of clinical predictors (CD4, WHO stage, facility tier) for the risk-stratification case."
+) |>
+  gt() |>
+  tab_header(
+    title    = "Convergence of evidence across the five techniques",
+    subtitle = "Each technique addresses one facet of the same business question"
+  ) |>
+  cols_width(
+    Technique                       ~ px(220),
+    `What it established`           ~ px(360),
+    `Contribution to the recommendation` ~ px(360)
+  )
+```
+
+Read column by column, the table tells one story: EDA defines the population, Visualisation makes the pattern visible, Hypothesis Testing confirms it is unlikely to be chance, Correlation makes sure the signals are not redundant, and Regression gives each surviving signal an adjusted effect size. The recommendation that follows is therefore not the output of any one technique but the consistent reading of all five.
+
+## The single integrated recommendation
+
+**Recommendation.** ACE-2 should adopt a phased, risk-stratified scale-up of computer-assisted-diagnosis chest X-ray screening rather than a uniform roll-out or an indefinite hold. The phasing is supported by the modality evidence in Sections 6, 7 and 9: the CXR-with-CAD modality consistently improves at least one of the three cascade transitions over the symptom-only screen, and the regression's adjusted modality odds ratio gives the programme a defensible effect size with which to argue the case before the donor and the State Ministry of Health. The risk stratification is supported by the predictor evidence in Sections 7 and 9: clients in the low CD4 stratum and at advanced WHO clinical stage carry materially higher adjusted odds of a confirmed TB result, and these are the strata in which the marginal yield of any added screening sensitivity is highest. The combination, phased CAD scale-up prioritising sites and clients with the highest pre-test probability of TB, is the protocol that all five techniques converge on. Alternative recommendations (universal CAD roll-out, or no change to the screening protocol) are each consistent with only a subset of the evidence and are therefore weaker on the page.
+
+## What the recommendation looks like in practice
+
+Three concrete operational steps follow from the integrated finding and can be lifted into a quarterly project workplan without further interpretation.
+
+```{r}
+#| label: tbl-implementation
+
+tribble(
+  ~Step, ~Action, ~`Evidence base`,
+
+  "1",
+  "Sequence the next tranche of CAD-CXR-equipped facilities by the share of clients on each site's line list whose profile matches the high-risk stratum (CD4 < 200 or WHO Stage III-IV). Deploy CAD to the top quartile of facilities by this share first.",
+  "Adjusted ORs for CD4 stratum and WHO stage (Sec. 9); facility-tier positivity rates in the stratified panel (Sec. 6).",
+
+  "2",
+  "Retain the standard 4-symptom screen as the universal first-line check at every facility. Where CAD CXR is available, route all clients with a positive symptom screen, advanced WHO stage, or CD4 < 200 to the CAD modality as a second-line confirmatory triage.",
+  "Modality-by-presumptive contingency and modality-by-confirmed contingency (Sec. 7); adjusted modality OR (Sec. 9).",
+
+  "3",
+  "Build a monthly programmatic dashboard that mirrors the cascade chart in Section 6, disaggregated by facility tier and by CD4 stratum, with a control-chart threshold for sites whose presumptive-to-confirmed conversion rate falls below the project median. Use the dashboard as the early-warning indicator for sites that require supportive supervision.",
+  "Cascade visualisation (Sec. 6); risk-stratified positivity rates (Sec. 6, Sec. 7); discrimination performance of the multivariable model (Sec. 9 AUC)."
+) |>
+  gt() |>
+  tab_header(
+    title    = "Three operational steps to implement the recommendation",
+    subtitle = "Each step is traceable to specific evidence in earlier sections"
+  ) |>
+  cols_width(
+    Step              ~ px(40),
+    Action            ~ px(440),
+    `Evidence base`   ~ px(360)
+  )
+```
+
+**What do these mean in simple terms?** The five techniques in this document do not give the project leadership five separate answers; they give one answer at five different levels of resolution. The visualisations show, in a form a clinic coordinator can read in a minute, where the cascade leaks and which modality identifies more cases. The unadjusted tests show that the modality and predictor differences seen in the charts are larger than chance would produce. The correlation matrix shows that the predictors are not just restating each other, so the next step is honest. The regression gives each predictor an adjusted effect size with a confidence interval that a program manager can quote in a meeting. The exploratory analysis at the start of the document bounds what every other section is allowed to claim, by telling the reader which clients are in the analytic sample and which data-quality decisions every later section has honoured. Read together, they support exactly one recommendation: phased, risk-stratified CAD scale-up, with the existing symptom screen retained as the universal first-line check. The three operational steps in the table above are the form in which that recommendation enters the next ACE-2 quarterly workplan, and each step is traceable to specific evidence in the sections that produced it.
+
+# Limitations and Further Work
+
+The recommendation in Section 10 was carefully bounded to what the present dataset can support. This section sets out, transparently, the conditions under which the recommendation should be revised, the analyses that would deepen it, and the specific things we would do differently with more data, time and computing power.
+
+## Limitations of the present analysis
+
+```{r}
+#| label: tbl-limitations
+
+tribble(
+  ~Limitation, ~`Implication for the recommendation`,
+
+  "Five-week observation window (1 April to 9 May 2026).",
+  "Cannot detect seasonality, monthly trends, or any change in case-finding yield that would unfold over a full quarter. The recommendation is read as a snapshot, not a longitudinal claim.",
+
+  "Small TB-positive event count (~16 confirmed positives in the analytic sample).",
+  "Limits statistical power for the regression and prevents the inclusion of interaction terms (e.g. modality x CD4) that would refine the risk-stratification component of the recommendation.",
+
+  "Structural missingness in the diagnostic pipeline (~75% of records have no TB diagnostic result).",
+  "The outcome question is answered on the diagnostic sub-cohort only. Generalisation to the full ART cohort relies on the assumption that referral to sampling is unbiased with respect to the predictors of interest, which is not formally testable in this dataset.",
+
+  "CAD sub-sample is small (~36 clients across 10 of 77 ACE-2 facilities in the dataset).",
+  "The CAD-score model in Section 9 is parsimonious and its odds ratio is estimated with wide confidence intervals. Within-modality conclusions about the CAD score should be re-estimated as the sub-sample grows.",
+
+  "Programmatic data, not a random sample.",
+  "Estimates are valid for the ACE-2 service delivery context (PEPFAR-supported facilities in Kano, Jigawa and Bauchi) and should not be extrapolated to other implementing partners, geographies, or screening protocols without local re-validation.",
+
+  "Single-level logistic regression with no facility-level random effects.",
+  "Standard errors may be modestly under-estimated if clients within the same facility are more similar than clients across facilities. The point estimates are preserved but the precision of those estimates is somewhat optimistic.",
+
+  "Cross-sectional design.",
+  "The analysis identifies association, not causation. The modality odds ratio quantifies how much TB positivity differs between modalities in this dataset, not how much it would change if a single facility switched from one modality to the other."
+) |>
+  gt() |>
+  tab_header(
+    title    = "Limitations of the present analysis and their bearing on the recommendation",
+    subtitle = "Each limitation is matched to the part of the recommendation it qualifies"
+  ) |>
+  cols_width(
+    Limitation                              ~ px(290),
+    `Implication for the recommendation`    ~ px(460)
+  )
+```
+
+## What more data would enable
+
+A longer observation window (twelve months instead of five weeks) would multiply the TB-positive event count by approximately an order of magnitude, lifting the model out of the small-events regime and making three specific extensions feasible: an unmodified four-level WHO clinical stage instead of the Early-versus-Advanced collapse adopted in Section 9; interaction terms (modality × CD4 stratum, modality × clinical stage) that would let the risk-stratification component of the recommendation be expressed as a *targeted* CAD deployment rule rather than a blanket "high-risk-strata-first" sequence; and time-resolved analyses that would expose any seasonal pattern in TB presentations. Extending coverage across all three ACE clusters in PEPFAR Nigeria, rather than ACE-2 alone, would broaden the geographical inference base from the three northern states to a national footprint and would allow heterogeneity in CAD effect to be quantified by region.
+
+## What more time would enable
+
+Three analyses were ruled out by the time budget of the take-home exam but are the natural next steps once the project is in operational publication mode. First, a multilevel logistic regression with facility-level random intercepts (the `lme4::glmer` or `glmmTMB` family) would correctly partition variance between within-facility and between-facility components, restore the precision lost by the assumption of independent observations, and produce a defensible measure of how much of the modality effect is being absorbed by between-facility differences in casefinding practice. Second, a survival analysis (Cox proportional hazards) on the time from TB screening to diagnostic result, and from diagnostic result to treatment initiation, would quantify pipeline efficiency rather than just pipeline yield, which is a question the donor will eventually ask. Third, a propensity-score-matched analysis of the modality comparison would address the non-random allocation of CAD CXR to facilities and produce a counterfactually interpretable modality effect that the present cross-sectional regression cannot.
+
+## What more computing power would enable
+
+The present logistic regression is a single, parsimonious, frequentist model fitted in milliseconds. With more compute the analyst would do three things. First, fit an ensemble of machine learning models (regularised logistic regression, random forest, gradient-boosted trees) under repeated cross-validation, both to obtain a more honest estimate of out-of-sample discrimination than the in-sample AUC reported in Section 9 and to surface non-linear or interaction structure that the logistic specification cannot represent. Second, refit the multivariable model in a Bayesian hierarchical framework (`brms` or `rstanarm`) with weakly informative priors on the coefficient scale; this would partially pool effect estimates across facilities, produce proper credible intervals for the rare-event coefficients, and replace the Firth correction with a principled regularisation. Third, run a non-parametric bootstrap on the primary model (1,000 or 10,000 resamples) to validate the confidence intervals around the headline modality odds ratio and the high-risk-stratum ORs, which are the numbers most likely to be quoted out of context once the document leaves the analyst's hands.
+
+**What do these mean in simple terms?** This section is the place where the recommendation in Section 10 is honest about what it does not know. The analysis is correct on its own terms, but it speaks to five weeks of data from one of three ACE clusters and to the small slice of the ART cohort that actually reached the diagnostic step; the recommendation is read in that light. The single most consequential extension available is simply more time on the same dataset, because more time produces more diagnostic outcomes, which produces a better-estimated modality odds ratio and a better-estimated risk-stratification rule. The next most consequential is a multilevel reformulation of the model, because the present design is silent on between-facility variation that the programme team would want to act on. The third is a properly cross-validated machine-learning comparison, which is the cheapest way to obtain reassurance that the logistic specification has not missed an important non-linearity. None of these extensions overturn the integrated recommendation; each makes it more precise.
+
+# References {.unnumbered}
+
+Adi, B. (2026). *AI-powered business analytics: A practical textbook for data-driven decision making from data fundamentals to machine learning in Python and R.* Lagos Business School / markanalytics.online. https://markanalytics.online
+
+Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., & Dervieux, C. (2024). *Quarto* (Version 1.x) [Computer software]. https://doi.org/10.5281/zenodo.5960048
+
+Anscombe, F. J. (1973). Graphs in statistical analysis. *The American Statistician, 27*(1), 17–21. https://doi.org/10.1080/00031305.1973.10478966
+
+Ben-Shachar, M. S., Lüdecke, D., & Makowski, D. (2020). effectsize: Estimation of effect size indices and standardized parameters. *Journal of Open Source Software, 5*(56), 2815. https://doi.org/10.21105/joss.02815
+
+Ezieme, I. (2026). *TB screening and diagnostic cascade data, April–May 2026* [Internal dataset]. Accelerating Control of the HIV Epidemic in Nigeria, Cluster 2 (ACE-2), Georgetown Global Health Nigeria, Kano, Nigeria. Available on request from the author.
+
+Firke, S. (2024). *janitor: Simple tools for examining and cleaning dirty data* (R package version 2.2.x) [Computer software]. https://CRAN.R-project.org/package=janitor
+
+Firth, D. (1993). Bias reduction of maximum likelihood estimates. *Biometrika, 80*(1), 27–38. https://doi.org/10.1093/biomet/80.1.27
+
+Fox, J., & Weisberg, S. (2019). *An R companion to applied regression* (3rd ed.). Sage.
+
+Getahun, H., Kittikraisak, W., Heilig, C. M., Corbett, E. L., Ayles, H., Cain, K. P., Grant, A. D., Churchyard, G. J., Kimerling, M., Shah, S., Lawn, S. D., Wood, R., Maartens, G., Granich, R., Date, A. A., & Varma, J. K. (2011). Development of a standardized screening rule for tuberculosis in people living with HIV in resource-constrained settings: Individual participant data meta-analysis of observational studies. *PLOS Medicine, 8*(1), e1000391. https://doi.org/10.1371/journal.pmed.1000391
+
+Hosmer, D. W., Lemeshow, S., & Sturdivant, R. X. (2013). *Applied logistic regression* (3rd ed.). Wiley.
+
+Iannone, R., Cheng, J., Schloerke, B., Hughes, E., Lauer, A., Seo, J., Brevoort, K., & Roy, O. (2024). *gt: Easily create presentation-ready display tables* (R package version 0.10.x) [Computer software]. https://CRAN.R-project.org/package=gt
+
+Kassambara, A. (2023). *ggcorrplot: Visualization of a correlation matrix using ggplot2* (R package version 0.1.x) [Computer software]. https://CRAN.R-project.org/package=ggcorrplot
+
+Kassambara, A. (2023). *rstatix: Pipe-friendly framework for basic statistical tests* (R package version 0.7.x) [Computer software]. https://CRAN.R-project.org/package=rstatix
+
+Lüdecke, D., Ben-Shachar, M. S., Patil, I., Waggoner, P., & Makowski, D. (2021). performance: An R package for assessment, comparison and testing of statistical models. *Journal of Open Source Software, 6*(60), 3139. https://doi.org/10.21105/joss.03139
+
+Müller, K. (2020). *here: A simpler way to find your files* (R package version 1.0.x) [Computer software]. https://CRAN.R-project.org/package=here
+
+Pedersen, T. L. (2024). *patchwork: The composer of plots* (R package version 1.2.x) [Computer software]. https://CRAN.R-project.org/package=patchwork
+
+R Core Team. (2024). *R: A language and environment for statistical computing* (Version 4.x) [Computer software]. R Foundation for Statistical Computing. https://www.R-project.org/
+
+Robin, X., Turck, N., Hainard, A., Tiberti, N., Lisacek, F., Sanchez, J.-C., & Müller, M. (2011). pROC: An open-source package for R and S+ to analyze and compare ROC curves. *BMC Bioinformatics, 12*, 77. https://doi.org/10.1186/1471-2105-12-77
+
+Robinson, D., Hayes, A., & Couch, S. (2024). *broom: Convert statistical objects into tidy tibbles* (R package version 1.0.x) [Computer software]. https://CRAN.R-project.org/package=broom
+
+Sjoberg, D. D., Whiting, K., Curry, M., Lavery, J. A., & Larmarange, J. (2021). Reproducible summary tables with the gtsummary package. *The R Journal, 13*(1), 570–580. https://doi.org/10.32614/RJ-2021-053
+
+Tukey, J. W. (1977). *Exploratory data analysis.* Addison-Wesley.
+
+Waring, E., Quinn, M., McNamara, A., Arino de la Rubia, E., Zhu, H., & Ellis, S. (2024). *skimr: Compact and flexible summaries of data* (R package version 2.1.x) [Computer software]. https://CRAN.R-project.org/package=skimr
+
+Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis* (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4
+
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the tidyverse. *Journal of Open Source Software, 4*(43), 1686. https://doi.org/10.21105/joss.01686
+
+Wickham, H., & Grolemund, G. (2023). *R for data science: Import, tidy, transform, visualize, and model data* (2nd ed.). O'Reilly Media.
+
+Wickham, H., & Seidel, D. (2022). *scales: Scale functions for visualization* (R package version 1.3.x) [Computer software]. https://CRAN.R-project.org/package=scales
+
+Wilkinson, L. (2005). *The grammar of graphics* (2nd ed.). Springer. https://doi.org/10.1007/0-387-28695-0
+
+World Health Organization. (2021). *WHO consolidated guidelines on tuberculosis. Module 2: Screening – Systematic screening for tuberculosis disease.* World Health Organization. https://www.who.int/publications/i/item/9789240022676
+
+World Health Organization. (2023). *Global tuberculosis report 2023.* World Health Organization. https://www.who.int/publications/i/item/9789240083851
+
+# Appendix: AI Usage Statement {.unnumbered}
+
+The analytical work in this document was assisted by Anthropic's Claude (Opus 4.7, accessed through the Cowork mode in the Claude desktop application), which served as a coding and drafting collaborator rather than as the originator of substantive decisions. I selected the dataset, defined the business question, executed the upfront extraction and cleaning of the FY26 Q3 Week 6 ACE-2 RADET file, obtained written data-use authorisation from the project's Monitoring and Evaluation and Data Quality Advisor, and wrote the opening prose for several early sections in my own voice before any AI assistance was invoked, sharing that pre-AI work with the model so that its later outputs were properly grounded in the operational context. Claude was then used to generate the R code chunks for each of the five required techniques and to draft the narrative prose around them; every output was reviewed for clinical coherence with the ACE-2 screening protocol before being accepted. I proofread each section, requested rewrites or complete removals where the explanation drifted from operational practice, redid entire sections when the flow was not strong enough, prompted the model to restore data elements it had silently dropped from charts and tables, reviewed figures for aesthetics and ease of visualisation, monitored word counts for sections with explicit length limits, and iteratively corrected R errors by feeding console output back into the conversation until the chunks rendered cleanly. The outputs of earlier sections shaped the prompts that produced later ones, so the document built incrementally rather than as a single pass. Decisions on which of the three case studies to attempt, which predictors to retain in the regression, how to handle structural missingness in the diagnostic pipeline, how to frame the scale-up recommendation, and how to size, label and colour each figure were mine; the AI's role was to put those decisions into reproducible R, gtsummary tables, and ggplot2 graphics. The final analytical conclusions, the integrated recommendation, and the limitations placed on its generalisability were guided by my technical inputs.
